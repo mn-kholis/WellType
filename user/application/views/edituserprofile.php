@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Profile - Well Type</title>
+    <title>Change Profile - Well Type</title>
     <style>
         body {
             background-color: #f4f4ed;
@@ -46,18 +46,18 @@
             object-fit: cover;
         }
         .side-menu ul li a {
-            color: #212529;
+            color: #212529; /* Warna teks default */
             padding: 10px;
             display: block;
             text-decoration: none;
             border-radius: 4px;
         }
         .side-menu ul li a:hover {
-            background-color: #c5c6c7; 
+            background-color: #c5c6c7; /* Warna latar belakang biru navbar */
         }
         #x {
-            background-color: #2d3e50; 
-            color: white; 
+            background-color: #2d3e50; /* Warna latar belakang biru navbar */
+            color: white; /* Warna teks menjadi putih */
         }
 
     </style>
@@ -70,10 +70,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><strong>Home</strong></a>
+                        <a class="nav-link" href="index.php"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="userprofile.html"><strong>Username</strong> <?php //echo htmlspecialchars($username); ?></a>
+                        <a class="nav-link" href="userprofile.php"><strong>Username</strong> <?php //echo htmlspecialchars($username); ?></a>
                     </li>
                 </ul>
             </div>
@@ -85,28 +85,30 @@
             <!-- Profil -->
             <div class="col-md-9">
                 <div class="profile-card shadow">
-                    <h4 class="mb-4"><Strong>Profile</Strong></h4>
-                    <div class="row align-items">
+                    <h4 class="mb-4"><Strong>Change Profile</Strong></h4>
+                    <div class="row align-items center">
                         <div class="col-md-3 text-center">
                             <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Profile Picture" class="img-fluid rounded-circle" width="100">
+                            <!-- Upload Profile Picture -->
+                            <form action="upload.php" method="POST" enctype="multipart/form-data">
+                                <div class="mt-2">
+                                    <input type="file" class="form-control" id="profile_picture" name="profile_picture">
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-2">Upload</button>
+                            </form>
                         </div>
                         <div class="col-md-9">
-                            <form>
+                            <form action="update_profile.php" method="POST">
                                 <div class="mb-3">
-                                    <label for="username" class="form-label "><strong>Username </strong></label>
-                                    <input type="text" class="form-control" id="username" value="" disabled>
+                                    <label for="username" class="form-label "><strong>Username</strong></label>
+                                    <input type="text" class="form-control" id="username" name="username" value="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label"><strong>Email</strong></label>
-                                    <input type="email" class="form-control" id="email" value="" disabled>
+                                    <input type="email" class="form-control" id="email" name="email" value="" >
                                 </div>
                                 <div class="mb-3">
-                                    <label for="level" class="form-label"><strong>Level</strong></label>
-                                    <input type="text" class="form-control" id="level" value="" disabled>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="reward" class="form-label"><strong>Total Reward</strong></label>
-                                    <input type="text" class="form-control" id="reward" value="" disabled>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
                                 </div>
                             </form>
                             <!-- Member Since -->
@@ -122,9 +124,9 @@
                 <div class="side-menu shadow">
                     <h5 class="mb-3"></h5>
                     <ul class="list-unstyled">
-                        <li><a href="<?= site_url('userprofile') ?>" class="text-decoration-none" id="x">Profile</a></li>
+                        <li><a href="<?= site_url('userprofile') ?>" class="text-decoration-none">Profile</a></li>
                         <li><a href="<?= site_url('ubahpass') ?>" class="text-decoration-none">Change Password</a></li>
-                        <li><a href="<?= site_url('edituserprofile') ?>" class="text-decoration-none">Change Profile</a></li>
+                        <li><a href="<?= site_url('edituserprofile') ?>" class="text-decoration-none" id="x">Change Profile</a></li>
                         <li><a href="<?= site_url('performanceanalysis') ?>" class="text-decoration-none">Performance Analysis</a></li>
                         <li><a href="<?= site_url('Logout') ?>" class="text-decoration-none">Logout</a></li>
                     </ul>
