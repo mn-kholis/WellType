@@ -23,21 +23,17 @@
     .navbar-brand, .nav-link {
         color: white !important;
     }
-    #x {
-        background-color: #2d3e50; /* Warna latar belakang biru navbar */
-        color: white; /* Warna teks menjadi putih */
-    }
     .btn-light {
-    padding: 2px 9px; /* Mengurangi ukuran padding */
-    border-radius: 4px; /* Membuat sudut sedikit melengkung */
-    font-size: 0.9rem; /* Memperkecil ukuran font */
-    color: #212529; /* Warna teks default */
+    padding: 2px 9px; 
+    border-radius: 4px; 
+    font-size: 0.9rem; 
+    color: #212529; 
 }
 
 .btn-light:hover {
-    background-color: #c5c6c7; /* Warna latar belakang saat hover */
-    color: #212529; /* Warna teks tetap */
-    text-decoration: none; /* Hilangkan garis bawah pada hover */
+    background-color: #c5c6c7; 
+    color: #212529; 
+    text-decoration: none; 
 }
 
 
@@ -50,7 +46,7 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="userprofile.html"><strong>Username</strong> <?php //echo htmlspecialchars($username); ?></a>
+                    <a class="nav-link" href="userprofile.html"><strong>Username</strong> <?php //echo htmlspecialchars($username);?></a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-light btn-sm fw-bold mt-2 ms-3" href="index.html">Back</a>
