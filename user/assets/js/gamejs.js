@@ -158,6 +158,9 @@ document.getElementById('game').addEventListener('keyup', ev => {
 document.getElementById('endGameBtn').addEventListener('click', () => {
   gameOver();
 });
+document.getElementById('backBtn').addEventListener('click', () => {
+  window.location.href = "http://localhost/WellType/WellType/user/";
+});
 document.getElementById('newGameBtn').addEventListener('click', () => {
   location.reload()
 });

@@ -42,11 +42,11 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2d3e50;">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="">WELL TYPE</a>
+        <a class="navbar-brand fw-bold" href="<?= base_url()?>">WELL TYPE</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href=""><strong>Username</strong> <?php //echo htmlspecialchars($username);?></a>
+                    <a class="nav-link" href="<?= base_url('userprofile')?>"><strong>Username</strong> <?php //echo htmlspecialchars($username);?></a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-light btn-sm fw-bold mt-2 ms-3" href="<?= base_url('listgame') ?>">Back</a>

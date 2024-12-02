@@ -66,14 +66,14 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2d3e50;">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">WELL TYPE</a>
+            <a class="navbar-brand fw-bold" href="<?= base_url()?>">WELL TYPE</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php"><strong>Home</strong></a>
+                        <a class="nav-link" href="<?= base_url()?>"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="userprofile.php"><strong>Username</strong> <?php //echo htmlspecialchars($username); ?></a>
+                        <a class="nav-link" href="<?= base_url('userprofile')?>"><strong>Username</strong> <?php //echo htmlspecialchars($username); ?></a>
                     </li>
                 </ul>
             </div>

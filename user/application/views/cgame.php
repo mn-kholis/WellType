@@ -24,6 +24,12 @@
             <div id="cursor"></div>
             <div id="focus-error">Click here to focus</div>
         </div>
+        <div>
+            <div id="buttons">
+                <br><br>
+                <a href="<?= base_url()?>"><button id="backBtn">Back Home</button></a>
+            </div>
+        </div>
     </main>
     <script src="<?= base_url('assets/js/gamejs.js') ?>"></script>
 </body>

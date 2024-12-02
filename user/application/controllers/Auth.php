@@ -23,6 +23,7 @@ public function signup() {
     // Jika validasi gagal
     if ($this->form_validation->run() == FALSE) {
         // Tampilkan kembali view dengan error
+        // $this->session->set_flashdata('error', validation_errors());
         $this->load->view('auth_view');
     } else {
         // Ambil data dari form

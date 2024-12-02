@@ -210,6 +210,11 @@ h2 {
             <form action="<?php echo base_url('Auth/signup'); ?>" method="post">
                 <h2>SIGN UP</h2>
                 <h2>WELL TYPE</h2>
+                <?php if ($this->session->flashdata('error')): ?>
+                    <div class="alert alert-danger">
+                        <?php echo $this->session->flashdata('error'); ?>
+                    </div>
+                <?php endif; ?>
                 <div class="input-group">
                     <input type="text" placeholder="" required>
                     <label for="">Username</label>
@@ -230,7 +235,7 @@ h2 {
         </div>
 
         <div class="form-wrapper sign-in">
-            <form action="<?php echo base_url('Auth/signin'); ?>" method="post">
+            <form action="<?php echo base_url(); ?>" method="post">
                 <h2>SIGN IN</h2>
                 <h2>WELL TYPE</h2>
                 <div class="input-group">
@@ -262,6 +267,14 @@ signInLink.addEventListener('click', () => {
     wrapper.classList.add('animate-signUp');
     wrapper.classList.remove('animate-signIn');
 });
+window.onload = () => {
+    // Jika ada pesan kesalahan, tetap di Sign Up form
+    if (document.querySelector('.alert-danger')) {
+        wrapper.classList.add('animate-signUp');
+    } else {
+        wrapper.classList.add('animate-signIn');
+    }
+};
 </script>
 </body>
 

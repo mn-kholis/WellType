@@ -42,8 +42,9 @@
             font-weight: bold;
         }
         .row {
-            justify-content-center; 
-            gap: 10px; 
+            display: flex; /* Pastikan elemen menggunakan Flexbox */
+            justify-content: center; /* Sejajarkan konten di tengah secara horizontal */
+            gap: 10px; /* Berikan jarak antar elemen */
         }
         .table th:first-child, .table td:first-child {
             width: 50px; 
@@ -59,14 +60,14 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">WELL TYPE</a>
+            <a class="navbar-brand fw-bold" href="<?= base_url()?>">WELL TYPE</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><strong>Home</strong></a>
+                        <a class="nav-link" href="<?= base_url()?>"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="userprofile.html"><strong>Username</strong></a>
+                        <a class="nav-link" href="<?= base_url('userprofile')?>"><strong>Username</strong></a>
                     </li>
                 </ul>
             </div>
