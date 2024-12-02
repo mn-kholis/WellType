@@ -10,6 +10,7 @@ class Typing extends CI_Controller {
     public function index() {
         // Ambil teks target dari database
         $data['target_text'] = $this->Mtyping->getTargetText();
+        $data['desk_text'] = $this->Mtyping->getDeskripsiText();
         $data['judul_text'] = $this->Mtyping->getJudulText();
         $this->load->view('typing', $data);
     }

@@ -73,7 +73,7 @@
                         <a class="nav-link" href="index.html"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="userprofile.html"><strong>Username</strong> <?php echo htmlspecialchars($username); ?></a>
+                        <a class="nav-link" href="userprofile.html"><strong>Username</strong> <?php //echo htmlspecialchars($username); ?></a>
                     </li>
                 </ul>
             </div>
@@ -88,7 +88,7 @@
                     <h4 class="mb-4"><Strong>Profile</Strong></h4>
                     <div class="row align-items">
                         <div class="col-md-3 text-center">
-                            <img src="Gree.jpg" alt="Profile Picture" class="img-fluid rounded-circle" width="100">
+                            <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Profile Picture" class="img-fluid rounded-circle" width="100">
                         </div>
                         <div class="col-md-9">
                             <form>
@@ -111,7 +111,7 @@
                             </form>
                             <!-- Member Since -->
                             <div class="member-since">
-                                Member since: 02/12/2024 <?php echo $member_since; ?>
+                                Member since: 02/12/2024 <?php //echo $member_since; ?>
                             </div>
                         </div>
                     </div>

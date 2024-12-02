@@ -22,7 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(#2196f3, #e91e63);
+    background: linear-gradient(#c5c6c7, #2d3e50);
     overflow: hidden;
 }
 
@@ -171,7 +171,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 40px;
-    background: linear-gradient(to right, #2196f3, #e91e63);
+    background: linear-gradient(to right, #c5c6c7, #2d3e50);
     box-shadow: 0 2px 10px rgba(0, 0, 0, .4);
     font-size: 16px;
     color: #fff;
@@ -193,7 +193,7 @@ h2 {
 }
 
 .sign-link p a {
-    color: #e91e63;
+    color: #2d3e50;
     text-decoration: none;
     font-weight: 600;
 }
