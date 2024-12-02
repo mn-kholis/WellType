@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.typing-container {
+    text-align: center;
+}
+
+.text-display {
+    margin-bottom: 20px;
+}
+
+#target-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.char {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #333;
+    background-color: #f5f5f5;
+    transition: all 0.2s ease;
+}
+
+.char.active {
+    border-color: blue;
+}
+
+.char.correct {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
+.char.wrong {
+    background-color: #f44336;
+    color: white;
+    border-color: #f44336;
+}
+
+.keyboard {
+    margin-bottom: 20px;
+}
+
+#current-key {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 3px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #333;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+#current-key.correct {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
+#current-key.wrong {
+    background-color: #f44336;
+    color: white;
+    border-color: #f44336;
+}
+
+.user-inputs {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.user-inputs .key {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 5px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #f5f5f5;
+    transition: all 0.2s ease;
+}
+
+/* Tambahkan gaya untuk spasi */
+.user-inputs .key.space {
+    width: 60px; /* Lebar khusus untuk spasi */
+    line-height: 50px; /* Sama dengan elemen lain */
+    background-color: #e0e0e0; /* Warna latar default */
+    text-align: center;
+    font-style: italic;
+}
+
+/* Status input */
+.user-inputs .key.correct {
+    background-color: #4caf50;
+    color: white;
+}
+
+.user-inputs .key.wrong {
+    background-color: #f44336;
+    color: white;
+}
