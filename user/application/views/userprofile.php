@@ -59,21 +59,20 @@
             background-color: #2d3e50; 
             color: white; 
         }
-
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2d3e50;">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="<?= base_url()?>">WELL TYPE</a>
+            <a class="navbar-brand fw-bold" href="<?= base_url() ?>">WELL TYPE</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url()?>"><strong>Home</strong></a>
+                        <a class="nav-link" href="<?= base_url() ?>"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><strong>Username</strong> <?php //echo htmlspecialchars($username); ?></a>
+                        <a class="nav-link" href="#"><strong><?= $user->username_user; ?></strong></a>
                     </li>
                 </ul>
             </div>
@@ -85,7 +84,7 @@
             <!-- Profil -->
             <div class="col-md-9">
                 <div class="profile-card shadow">
-                    <h4 class="mb-4"><Strong>Profile</Strong></h4>
+                    <h4 class="mb-4"><strong>Profile</strong></h4>
                     <div class="row align-items">
                         <div class="col-md-3 text-center">
                             <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Profile Picture" class="img-fluid rounded-circle" width="100">
@@ -93,25 +92,25 @@
                         <div class="col-md-9">
                             <form>
                                 <div class="mb-3">
-                                    <label for="username" class="form-label "><strong>Username </strong></label>
-                                    <input type="text" class="form-control" id="username" value="" disabled>
+                                    <label for="username" class="form-label"><strong>Username</strong></label>
+                                    <input type="text" class="form-control" id="username" value="<?= $user->username_user; ?>" disabled>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label"><strong>Email</strong></label>
-                                    <input type="email" class="form-control" id="email" value="" disabled>
+                                    <input type="email" class="form-control" id="email" value="<?= $user->email_user; ?>" disabled>
                                 </div>
                                 <div class="mb-3">
                                     <label for="level" class="form-label"><strong>Level</strong></label>
-                                    <input type="text" class="form-control" id="level" value="" disabled>
+                                    <input type="text" class="form-control" id="level" value="<?= $user->level_user; ?>" disabled>
                                 </div>
                                 <div class="mb-3">
                                     <label for="reward" class="form-label"><strong>Total Reward</strong></label>
-                                    <input type="text" class="form-control" id="reward" value="" disabled>
+                                    <input type="text" class="form-control" id="reward" value="<?= $user->total_reward; ?>" disabled>
                                 </div>
                             </form>
                             <!-- Member Since -->
                             <div class="member-since">
-                                Member since: 02/12/2024 <?php //echo $member_since; ?>
+                                Member since: <?= date('d/m/Y', strtotime($user->tgl_reg_user)); ?>
                             </div>
                         </div>
                     </div>
