@@ -210,22 +210,19 @@ h2 {
             <form action="<?php echo base_url('Auth/signup'); ?>" method="post">
                 <h2>SIGN UP</h2>
                 <h2>WELL TYPE</h2>
-                <?php if ($this->session->flashdata('error')): ?>
-                    <div class="alert alert-danger">
-                        <?php echo $this->session->flashdata('error'); ?>
-                    </div>
-                <?php endif; ?>
                 <div class="input-group">
-                    <input type="text" placeholder="" required>
+                    <input type="text" placeholder="" name="username" required>
                     <label for="">Username</label>
                 </div>
                 <div class="input-group">
-                    <input type="email" placeholder="" required>
+                    <input type="email" placeholder="" name="email" required>
                     <label for="">Email</label>
+                    <?php echo form_error('email', '<small class="text-danger">', '</small>'); ?>
                 </div>
                 <div class="input-group">
-                    <input type="password" placeholder="" required>
+                    <input type="password" placeholder="" name="password" required>
                     <label for="">Password</label>
+                    <?php echo form_error('password', '<small class="text-danger">', '</small>'); ?>
                 </div>
                 <button type="submit" class="btn">Sign Up</button>
                 <div class="sign-link">
@@ -235,16 +232,18 @@ h2 {
         </div>
 
         <div class="form-wrapper sign-in">
-            <form action="<?php echo base_url(); ?>" method="post">
+            <form action="<?php echo base_url('Auth/signin'); ?>" method="post">
                 <h2>SIGN IN</h2>
                 <h2>WELL TYPE</h2>
                 <div class="input-group">
-                    <input type="text" placeholder="" required>
+                    <input type="text" placeholder="" name="username" required>
                     <label for="">Username</label>
+                    <?php echo form_error('username', '<small class="text-danger">', '</small>'); ?>
                 </div>
                 <div class="input-group">
-                    <input type="password" placeholder="" required>
+                    <input type="password" placeholder="" name="password" required>
                     <label for="">Password</label>
+                    <?php echo form_error('password', '<small class="text-danger">', '</small>'); ?>
                 </div>
                 <button type="submit" class="btn">Login</button>
                 <div class="sign-link">
@@ -268,14 +267,57 @@ signInLink.addEventListener('click', () => {
     wrapper.classList.remove('animate-signIn');
 });
 window.onload = () => {
-    // Jika ada pesan kesalahan, tetap di Sign Up form
-    if (document.querySelector('.alert-danger')) {
-        wrapper.classList.add('animate-signUp');
-    } else {
+    const flashSignup = "<?php echo $this->session->flashdata('signup_error') ? 'true' : 'false'; ?>";
+    const flashSignin = "<?php echo $this->session->flashdata('signin_error') ? 'true' : 'false'; ?>";
+
+    if (flashSignup === 'true') {
+        // Jika ada flash data signup error, tampilkan form signup
         wrapper.classList.add('animate-signIn');
+        wrapper.classList.remove('animate-signUp');
+    } else if (flashSignin === 'true') {
+        // Jika ada flash data signin error, tampilkan form signin
+        wrapper.classList.add('animate-signUp');
+        wrapper.classList.remove('animate-signIn');
+    } else {
+        // Default ke form signin
+        wrapper.classList.add('animate-signUp');
+        wrapper.classList.remove('animate-signIn');
     }
 };
+
 </script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+
+<?php if($this->session->flashdata("signup_error")): ?>
+    <script>
+        swal("gagal!", "<?php echo $this->session->flashdata("signup_error");?>", "error");
+    </script>
+<?php endif ?>
+
+<?php if($this->session->flashdata("signup_succes")): ?>
+    <script>
+        swal("Sukses!", "<?php echo $this->session->flashdata("signup_succes");?>", "success");
+    </script>
+<?php endif ?> 
+
+<?php if($this->session->flashdata("signin_error")): ?>
+    <script>
+        swal("gagal!", "<?php echo $this->session->flashdata("signin_error");?>", "error");
+    </script>
+<?php endif ?>
+
+<?php if($this->session->flashdata("pesan_sukses")): ?>
+    <script>
+        swal("Sukses!", "<?php echo $this->session->flashdata("pesan_sukses");?>", "success");
+    </script>
+<?php endif ?>  
+
+<?php if($this->session->flashdata("pesan_gagal")): ?>
+    <script>
+        swal("gagal!", "<?php echo $this->session->flashdata("pesan_gagal");?>", "error");
+    </script>
+<?php endif ?>
 </body>
 
 </html>
