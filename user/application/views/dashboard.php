@@ -8,18 +8,20 @@
     <title>Dashboard</title>
 <style>
         body {
-            background-color: #f4f4ed;
+            background-color: white;
             margin-top: 50px; 
         }
         .navbar {
             position: fixed;
+            padding: 0px;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
+            height: 50px;
         }
         .navbar {
-            background-color: #2d3e50;
+            background-color: #1C3F60;
         }
         .navbar-brand, .nav-link {
             color: white !important;
@@ -37,7 +39,7 @@
         }
 
         footer a:hover {
-            color: #ffcc00; /* Warna ketika di-hover */
+            color: #1C3F60; /* Warna ketika di-hover */
             text-decoration: none;
         }
         .cover-container {
@@ -60,6 +62,101 @@
         }
         .button button:hover {
             background-color: #ddd;
+        }
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+        .background-container {
+            background-image: url('assets/image/well.jpg'); /* Path ke gambar */
+            background-size: cover; /* Menyesuaikan gambar dengan ukuran container */
+            background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+            background-position: center; /* Memusatkan gambar */
+            width: 100%; /* Atur lebar sesuai kebutuhan */
+            height: 120vh; /* Atur tinggi sesuai kebutuhan, misalnya full viewport */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white; /* Warna teks */
+            text-align: center; /* Pusatkan teks */
+        }
+        .background-container button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 1200px;
+            width: 90%;
+            gap: 20px; /* Jarak antara robot dan teks */
+        }
+
+        .robot-logo {
+            width: 50%; /* Robot mengambil 20% lebar container */
+            height: auto;
+        }
+
+        @media (max-width: 768px) { /* Untuk layar kecil */
+            .robot-logo {
+                width: 100px; /* Ukuran lebih kecil untuk perangkat mobile */
+            }
+        }
+
+        .welcome-text {
+            position: relative; /* Jika ingin menggunakan top */
+            top: -250px; /* Geser elemen ke atas */
+            margin-top: -20px; /* Alternatif jika tidak menggunakan posisi relatif */
+            text-align: left;
         }
     </style>
 </head>
@@ -93,23 +190,19 @@
             </div>
         </div>
     </nav>
-<section class="mb-3">
-        <div class="cover-container d-flex w-100 h-70 mx-auto flex-column">
-            <div class="row mt-5 ms-5 me-5">
-                <div class="text-center col-md-4">
-                    <img src="<?= base_url('assets/image/logo.png') ?>" alt="logo" width="430">
+    <div class="background-container">
+    <div class="content">
+                    <img src="<?= base_url('assets/image/logo.png') ?>" alt="logo" width="400">
                 </div>
-                <div class="tex align-self-center col-md-8">
+                <div class="welcome-text">
                     <h3 class="ms-5 fw-bold">Hallo...</h3>
                     <h3 class="ms-5 fw-bold">Good Morning</h3>
+                    <p class="ms-5 fw-bold">Track your typing progress and improve your skills.</p>
                     <div class="ms-5 button center col-md-8">
                         <button class="fw-bold">Get Started</button>
                     </div>
-                </div>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f4f4ed" fill-opacity="1" d="M0,288L18.5,266.7C36.9,245,74,203,111,170.7C147.7,139,185,117,222,122.7C258.5,128,295,160,332,181.3C369.2,203,406,213,443,186.7C480,160,517,96,554,74.7C590.8,53,628,75,665,96C701.5,117,738,139,775,149.3C812.3,160,849,160,886,138.7C923.1,117,960,75,997,85.3C1033.8,96,1071,160,1108,181.3C1144.6,203,1182,181,1218,149.3C1255.4,117,1292,75,1329,58.7C1366.2,43,1403,53,1422,58.7L1440,64L1440,320L1421.5,320C1403.1,320,1366,320,1329,320C1292.3,320,1255,320,1218,320C1181.5,320,1145,320,1108,320C1070.8,320,1034,320,997,320C960,320,923,320,886,320C849.2,320,812,320,775,320C738.5,320,702,320,665,320C627.7,320,591,320,554,320C516.9,320,480,320,443,320C406.2,320,369,320,332,320C295.4,320,258,320,222,320C184.6,320,148,320,111,320C73.8,320,37,320,18,320L0,320Z"></path></svg>
-        </div>
-</section>
+    </div>
+    </div>
 <section>
     <div class="container mt-5">
         <div class="row justify-content-lg-between">
@@ -122,11 +215,58 @@
             <br /><br />
         </div>
         <div class="col-lg-4">
-            <img src="<?= base_url('assets/image/keyboard.png');?>" height="70%" width="100%" class="rounded" alt="barista" />
+            <img src="<?= base_url('assets/image/keyboarduser.jpeg');?>" height="70%" width="100%" class="rounded" alt="barista" />
         </div>
         </div>
     </div>
 </section>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Artikel Terbaru</h1>
+        <div class="grid">
+            <div class="card">
+                <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Sweater Oversized Crewneck">
+                <div class="card-content">
+                    <p class="card-title">Mengapa Belajar Mengetik dengan 10 Jari Penting untuk Masa Depan Anda?
+                    </p>
+                    <p class="card-description">Di era digital saat ini, mengetik adalah salah satu keterampilan dasar yang wajib dimiliki.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Gamis Adeline Maxi Shakila">
+                <div class="card-content">
+                    <p class="card-title">Apa Itu Metode Mengetik dengan 10 Jari?
+                    </p>
+                    <p class="card-description">Metode mengetik dengan 10 jari adalah teknik mengetik yang melibatkan semua jari tangan untuk
+                         mengetik di keyboard tanpa melihat tombol. 
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Pashmina Kaos">
+                <div class="card-content">
+                    <p class="card-title">Manfaat Mengetik dengan 10 Jari
+                    </p>
+                    <p class="card-description">Meningkatkan Kecepatan dan Akurasi Dengan metode ini, Anda dapat mengetik lebih cepat dan akurat dibandingkan mengetik
+                        dengan cara melihat keyboard. 
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Jilbab Bahan Paris">
+                <div class="card-content">
+                    <p class="card-title">Tips Belajar Mengetik dengan 10 Jari
+                    </p>
+                    <p class="card-description">Kenali Posisi Dasar Tempatkan jari-jari Anda pada tombol "home row" (ASDF untuk tangan kiri dan JKL; untuk tangan kanan). 
+                        Ibu jari Anda berada di tombol spasi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 </main>
 <!-- Footer -->
