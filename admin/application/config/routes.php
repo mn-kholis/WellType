@@ -56,3 +56,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['Auth'] = 'Auth/index'; // Mengakses halaman auth
 $route['Auth/signup'] = 'Auth/signup'; // Mengakses signup
 $route['Auth/signin'] = 'Auth/signin'; // Mengakses signin
+$route['content'] = 'content/index';
+
+
