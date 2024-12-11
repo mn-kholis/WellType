@@ -3,9 +3,14 @@
 
 		public function index()
 		{
-			//redirect ke halaman login
+			// Hapus semua session userdata
+			$this->session->sess_destroy();
+
+			// Set flashdata untuk notifikasi logout
 			$this->session->set_flashdata('pesan_sukses', 'You have logged out!');
-			redirect('/','refresh');
+
+			// Redirect ke halaman login atau halaman utama
+			redirect('/', 'refresh');
 		}
 	}
 ?>

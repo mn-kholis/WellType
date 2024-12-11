@@ -30,6 +30,9 @@ h1 svg{
 #buttons{
     text-align: right;
 }
+#buttons{
+    text-align: left;
+}
 #info{
     color: #c5c6c7;
 }

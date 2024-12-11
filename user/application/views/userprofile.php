@@ -68,6 +68,11 @@
             <a class="navbar-brand fw-bold" href="<?= base_url() ?>">WELL TYPE</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
+                    <?php if($this->session->userdata("username")&& $this->session->userdata("status_user")=='free'):?>
+                    <li class="nav-item">
+                    <a class="btn btn-warning btn-sm fw-bold mt-2 me-3" href="<?= base_url('Getprem') ?>">Get Plus!</a>
+                    </li>
+                    <?php endif ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>"><strong>Home</strong></a>
                     </li>
@@ -107,6 +112,10 @@
                                     <label for="reward" class="form-label"><strong>Total Reward</strong></label>
                                     <input type="text" class="form-control" id="reward" value="<?= $user->total_reward; ?>" disabled>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="reward" class="form-label"><strong>Best WPM</strong></label>
+                                    <input type="text" class="form-control" id="reward" value="<?= $user->best_wpm; ?>" disabled>
+                                </div>
                             </form>
                             <!-- Member Since -->
                             <div class="member-since">
@@ -124,7 +133,9 @@
                         <li><a href="<?= site_url('userprofile') ?>" class="text-decoration-none" id="x">Profile</a></li>
                         <li><a href="<?= site_url('ubahpass') ?>" class="text-decoration-none">Change Password</a></li>
                         <li><a href="<?= site_url('edituserprofile') ?>" class="text-decoration-none">Change Profile</a></li>
+                        <?php if($this->session->userdata("status_user")=='premium'):?>
                         <li><a href="<?= site_url('performanceanalysis') ?>" class="text-decoration-none">Performance Analysis</a></li>
+                        <?php endif; ?>
                         <li><a href="<?= site_url('Logout') ?>" class="text-decoration-none">Logout</a></li>
                     </ul>
                 </div>

@@ -1,3 +1,4 @@
+
 <!-- footer content -->
 <footer>
   <div class="pull-right">
@@ -37,3 +38,26 @@
 
 <!-- Custom Theme Scripts -->
 <script src="<?php echo base_url() ?>template/build/js/custom.min.js"></script>
+
+<style>
+  footer {
+    background: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    position: relative;  /* Agar footer tidak terangkat */
+    margin-top: auto;  /* Menjaga footer tetap di bawah */
+}
+</style> 
+    
+    <!-- Custom Theme Scripts -->
+    <script src="<?php echo base_url() ?>template/build/js/custom.min.js"></script>
+
+    <script src=https://unpkg.com/sweetalert/dist/sweetalert.min.js></script>
+    <?php if($this->session->flashdata('pesan_sukses')): ?>
+    <script>swal("Sukses", "<?php echo $this->session->flashdata('pesan_sukses');?>", "success");</script>
+    <?php endif ?>
+    <?php if($this->session->flashdata('pesan_gagal')): ?>
+    <script>swal("Gagal", "<?php echo $this->session->flashdata('pesan_gagal');?>", "error");</script>
+    <?php endif ?>  
+

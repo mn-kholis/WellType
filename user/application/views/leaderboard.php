@@ -63,6 +63,11 @@
             <a class="navbar-brand fw-bold" href="<?= base_url()?>">WELL TYPE</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
+                    <?php if($this->session->userdata("username")&& $this->session->userdata("status_user")=='free'):?>
+                    <li class="nav-item">
+                    <a class="btn btn-warning btn-sm fw-bold mt-2 me-3" href="<?= base_url('Getprem') ?>">Get Plus!</a>
+                    </li>
+                    <?php endif ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url()?>"><strong>Home</strong></a>
                     </li>
