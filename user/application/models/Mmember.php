@@ -15,7 +15,7 @@ class Mmember extends CI_Model {
 
         if(!empty($cekmember)){
             $this->session->set_userdata("id_user", $cekmember['id_user']);
-            $this->session->set_userdata("username_user", $cekmember['username_user']);
+            $this->session->set_userdata("username", $cekmember['username_user']);
             $this->session->set_userdata("email_user", $cekmember['email_user']);
             $this->session->set_userdata("status_user", $cekmember['status_user']);
             return "ada";
