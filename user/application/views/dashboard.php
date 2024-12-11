@@ -175,7 +175,7 @@
                     <?php endif ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Game
+                        <strong>Game</strong></a>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="cgame">Test WPM</a></li>
@@ -203,16 +203,12 @@
         </div>
     </nav>
     <div class="background-container">
-    <div class="content">
-                    <img src="<?= base_url('assets/image/logo.png') ?>" alt="logo" width="400">
+    <div class="content mb-5">
+                    <img src="<?= base_url('assets/image/logo.png') ?>" alt="logo" width="400" class="mb-3">
                 </div>
                 <div class="welcome-text">
-                    <h3 class="ms-5 fw-bold">Hallo...</h3>
-                    <h3 class="ms-5 fw-bold">Good Morning</h3>
+                    <h3 class=" ms-5 fw-bold" style="font: ">Hallo... <br>Good Morning</h3>
                     <p class="ms-5 fw-bold">Track your typing progress and improve your skills.</p>
-                    <div class="ms-5 button center col-md-8">
-                        <button class="fw-bold">Get Started</button>
-                    </div>
     </div>
     </div>
 <section>
