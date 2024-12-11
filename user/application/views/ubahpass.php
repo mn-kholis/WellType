@@ -66,11 +66,16 @@
             <a class="navbar-brand fw-bold" href="<?= base_url() ?>">WELL TYPE</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
+                    <?php if($this->session->userdata("username")&& $this->session->userdata("status_user")=='free'):?>
+                    <li class="nav-item">
+                    <a class="btn btn-warning btn-sm fw-bold mt-2 me-3" href="#">Get Plus!</a>
+                    </li>
+                    <?php endif ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><strong><?= $user->username_user; ?></strong></a>
+                        <a class="nav-link" href="<?= base_url('userprofile')?>"><strong><?= $this->session->userdata('username'); ?></strong></a>
                     </li>
                 </ul>
             </div>
@@ -102,8 +107,10 @@
                     <ul class="list-unstyled">
                         <li><a href="<?= site_url('userprofile') ?>">Profile</a></li>
                         <li><a href="<?= site_url('ubahpass') ?>" class="active">Change Password</a></li>
-                        <li><a href="<?= site_url('edituserprofile') ?>">Change Data</a></li>
-                        <li><a href="<?= site_url('performanceanalysis') ?>">Performance Analysis</a></li>
+                        <li><a href="<?= site_url('edituserprofile') ?>">Change Profile</a></li>
+                        <?php if($this->session->userdata("status_user")=='premium'):?>
+                        <li><a href="<?= site_url('performanceanalysis') ?>" class="text-decoration-none">Performance Analysis</a></li>
+                        <?php endif; ?>
                         <li><a href="<?= site_url('logout') ?>">Logout</a></li>
                     </ul>
                 </div>
