@@ -42,7 +42,8 @@ public function signup() {
         $m['best_wpm'] = 0;
         $m['level_user'] = 0;
         $m['tgl_reg_user'] = date('Y-m-d');
-
+        
+        $this->load->model("Mmember");
         $this->Mmember->register($m);
         $this->session->set_flashdata('signup_succes', 'Signup Berhasil! Silahkan Melakukan Login.');
         redirect('Auth'); // Kembali ke halaman form setelah signup
