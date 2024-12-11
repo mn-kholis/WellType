@@ -1,5 +1,13 @@
 <?php $this->load->view('template/header') ?>
 
+<style>
+  .tile-stats .icon {
+    font-size: 50px; /* Ukuran ikon */
+    color: #5A738E; /* Warna ikon */
+    margin-top: 20px; /* Menambahkan jarak antara ikon dengan bagian atas kotak */
+    display: inline-block; /* Pastikan ikon tetap pada posisi */
+  }
+</style>
 
   <body class="nav-md">
     <div class="container body">
@@ -22,9 +30,6 @@
                 <h2>Tia</h2>
               </div>
             </div>
-            <!-- /menu profile quick info -->
-
-            <br />
 
             <!-- sidebar menu -->
            <?php $this->load->view('template/sidebar') ?>
@@ -58,21 +63,21 @@
   <div class="right_col" role="main">
   <div class="">
   <div class="row">
-      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+      <div class="animated flipInY col-lg-3 col-md-4 col-sm-6">
         <div class="tile-stats">
           <div class="icon"><i class="fa fa-user"></i></div>
           <div class="count">179</div>
           <h5 class="ml-3 mt-3">Premium User</h5>
         </div>
     </div>
-    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+    <div class="animated flipInY col-lg-3 col-md-4 col-sm-6">
         <div class="tile-stats">
             <div class="icon"><i class="fa fa-user"></i></div>
             <div class="count">200</div>
             <h5 class="ml-3 mt-3">Free User</h5>
         </div>
     </div>
-    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+    <div class="animated flipInY col-lg-3 col-md-4 col-sm-6">
         <div class="tile-stats">
             <div class="icon"><i class="fa fa-user"></i></div>
             <div class="count">400</div>
