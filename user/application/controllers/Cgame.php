@@ -10,10 +10,14 @@ class Cgame extends CI_Controller {
         parent::__construct();
         $this->load->model('Mwpm');
         $this->load->helper('url');
+        if (!$this->session->userdata('username')) {
+            $this->session->set_flashdata('signin_error', 'Anda Belum Login! Silakan Login Terlebih Dahulu.');
+            redirect('Auth'); // Redirect ke halaman login jika belum login
+        }
     }
 
     public function index() {
-        $userId = 1; //$this->session->userdata('user_id');
+        $userId = $this->session->userdata('user_id');
         $bestWpmValue = $this->Mwpm->getBestWpm($userId);
         $data['bestWpm'] = $bestWpmValue->best_wpm;
         $this->load->view('cgame', $data); // Load view dengan data
@@ -29,8 +33,8 @@ class Cgame extends CI_Controller {
                 $this->load->model('Mwpm');
                 
                 // Simpan Best WPM ke database
-                // $result = $this->Mwpm->updateBestWpm($this->session->userdata('user_id'), $bestWpm);
-                $result = $this->Mwpm->updateBestWpm(1, $bestWpm);
+                $result = $this->Mwpm->updateBestWpm($this->session->userdata('user_id'), $bestWpm);
+                //$result = $this->Mwpm->updateBestWpm(1, $bestWpm);
                 if ($result) {
                     echo json_encode(['success' => true]);
                 } else {

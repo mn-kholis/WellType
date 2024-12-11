@@ -26,4 +26,15 @@ class Mmember extends CI_Model {
     function register($m){
         $this->db->insert('user', $m);
     }
+    function setprem($user_id){
+        $data = array(
+            'status_user' => 'premium' // Data yang akan diupdate
+        );
+
+        $this->db->where('id_user', $user_id); // Kondisi berdasarkan ID user
+        $this->db->update('user', $data);
+        
+        $this->session->set_userdata("status_user", "premium");
+    
+    }
 }

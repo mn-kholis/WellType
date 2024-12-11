@@ -9,7 +9,8 @@ class Userprofile extends CI_Controller {
         $this->load->model('Muserprofile');
         // Pastikan pengguna sudah login
         if (!$this->session->userdata('username')) {
-            redirect('auth/signin'); // Redirect ke halaman login jika belum login
+            $this->session->set_flashdata('signin_error', 'Anda Belum Login! Silakan Login Terlebih Dahulu.');
+            redirect('Auth'); // Redirect ke halaman login jika belum login
         }
     }
 
