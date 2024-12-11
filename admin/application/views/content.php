@@ -117,7 +117,7 @@
                                                             width="100" alt="Gambar Konten">
                                                     </td>
                                                     <td class="text-center">
-                                                        <a href="<?php echo base_url('Content/edit/' . $row->id_konten); ?>"
+                                                        <a href="<?php echo base_url('index.php/Content/edit/' . $row->id_konten); ?>"
                                                             class="btn btn-warning">Edit</a>
                                                         <a href="<?php echo base_url('index.php/Content/delete_content/'. $row->id_konten); ?>"
                                                             class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Delete</a>
@@ -128,7 +128,7 @@
                                     </table>
                                 </div>
                                 <div class="text-left">
-                                    <a href="<?php echo base_url('content/add'); ?>" class="btn btn-primary">Add Content</a>
+                                    <a href="<?php echo base_url('index.php/Content/add/'); ?>" class="btn btn-primary">Add Content</a>
                                 </div>
                             </div>
                         </div>
