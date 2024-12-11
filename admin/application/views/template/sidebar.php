@@ -10,7 +10,7 @@
                       <li><a href="">Free User</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Content</a>
+                  <li><a href="<?php echo base_url('content'); ?>"><i class="fa fa-table"></i> Content</a></li>
                   </li>
                   <li><a><i class="fa fa-laptop"></i> Game</a>
                   </li>
