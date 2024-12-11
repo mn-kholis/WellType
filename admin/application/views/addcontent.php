@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Marketplace</title>
+    <title>WellType</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   </head>
   <body>
@@ -40,7 +40,7 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <a href="<?php echo base_url("akun") ?>" class="nav-link">
-                    <?php echo $this->session->userdata("") ?>
+                    <?php echo $this->session->userdata("nama") ?>
                 </a>
             </li>
             <li class="nav-item">
@@ -51,36 +51,28 @@
     	</div>
     </nav>
 <div class="container">
-	<h5>Edit Artikel</h5>
+	<h5>Tambah artikel</h5>
 
 	<form method="post" enctype="multipart/form-data">
 		<div class="mb-3">
 			<label>Judul Artikel</label>
-			<input type="text" name="judul_artikel" class="form-control" value="<?php echo set_value("judul_artikel", $artikel["judul_artikel"]) ?>">
+			<input type="text" name="judul_artikel" class="form-control" value="<?php echo set_value("judul_artikel") ?>">
 				<?php echo form_error("judul_artikel") ?>
 			</span>
 		</div>
 		<div class="mb-3">
-			<label>Isi Artikel</label>
-			<textarea class="form-control" id="editorku" name="isi_artikel"><?php echo set_value("isi_artikel", $artikel['isi_artikel']) ?></textarea>
-			<span class="small text-danger">
+			<label>Isi artikel</label>
+			<textarea class="form-control" id="editorku" name="isi_artikel"><?php echo set_value("isi_artikel") ?></textarea>
 				<?php echo form_error("isi_artikel") ?>
 			</span>
 		</div>
-
 		<div class="mb-3">
-			<label>Foto Lama</label><br>
-			<img src="<?php echo $this->config->item("url_artikel").$artikel["foto_artikel"] ?>" width="250">
-		</div>
-
-		<div class="mb-3">
-			<label>Ganti Foto artikel</label>
+			<label>Foto artikel</label>
 			<input type="file" name="foto_artikel" class="form-control">
 		</div>
 		<button type="submit" class="btn btn-primary">Simpan</button>
 	</form>
 </div>
-
 
 <footer class="bg-light text-center py-3">
     	<div class="">Copyright &copy; 2024. Amikom</div>
