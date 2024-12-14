@@ -9,13 +9,17 @@ class Mtyping extends CI_Model {
         $query = $this->db->get();
         return $query->row();
     }
-    public function getJudulText() {
-        // Contoh: Ambil data dari database (table 'typing_texts')
-        $this->db->select('judul_game');
-        $this->db->from('game');
-        // $this->db->order_by('id', 'RANDOM'); // Ambil secara acak
-        $query = $this->db->get();
-        return $query->row()->judul_game;
+    public function rubah_level() {
+        $level = $this->session->userdata('level_user');
+        $user_id = $this->session->userdata('id_user');
+        $data = array(
+            'level_user' => $level + 1 
+        );
+
+        $this->db->where('id_user', $user_id);
+        $this->db->update('user', $data);
+        
+        $this->session->set_userdata("level_user", $level + 1);
     }
     public function getDeskripsiText() {
         // Contoh: Ambil data dari database (table 'typing_texts')

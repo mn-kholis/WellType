@@ -18,6 +18,12 @@ class Mmember extends CI_Model {
             $this->session->set_userdata("username", $cekmember['username_user']);
             $this->session->set_userdata("email_user", $cekmember['email_user']);
             $this->session->set_userdata("status_user", $cekmember['status_user']);
+            $this->session->set_userdata("level_user", $cekmember['level_user']);
+            // $data = array(
+            //     'logterakhir_user' => date('Y-m-d') 
+            // );
+            // $this->db->where('id_user', $cekmember['id_user']);
+            // $this->db->update('user', $data);
             return "ada";
         }else{
             return "ga ada";
@@ -28,10 +34,10 @@ class Mmember extends CI_Model {
     }
     function setprem($user_id){
         $data = array(
-            'status_user' => 'premium' // Data yang akan diupdate
+            'status_user' => 'premium' 
         );
 
-        $this->db->where('id_user', $user_id); // Kondisi berdasarkan ID user
+        $this->db->where('id_user', $user_id);
         $this->db->update('user', $data);
         
         $this->session->set_userdata("status_user", "premium");

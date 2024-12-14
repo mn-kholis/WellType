@@ -62,28 +62,11 @@
 </nav>
 <div class="">
     <div class="typing-container">
-            <div class="mb-5">
-                <h1><?php echo $target->judul_game?></h1>
-                <p><?php echo $target->deskripsi_game?></p>
-            </div>
-            <div class="text-display">
-                <p id="target-text">
-                    <?php foreach (str_split($target->text_game) as $char): ?>
-                        <span class="char" data-key="<?= strtolower($char) ?>">
-                            <?= $char === ' ' ? '&nbsp;' : $char ?>
-                        </span>
-                    <?php endforeach; ?>
-                </p>
-            </div>
-            <div class="keyboard">
-                <h5>Click the button :</h5>
-                <span class="key" id="current-key">_</span>
-            </div>
-            <img src="<?= base_url('assets/image/keyboard5.jpg') ?>" width="300">
-            <p>your last input :</p>
-            <div class="user-inputs"></div>
-        </div>
-        <script src="<?= base_url('assets/js/script.js') ?>?v=<?= time(); ?>"></script>
+            <video width="80%" controls>
+                <source src="<?= base_url('assets/image/edclub.mp4'); ?>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br><br><br><a class="btn btn-primary" href="<?= base_url('Typing/game/1')?>">Skip Video</a>
 </div>
     
 </body>

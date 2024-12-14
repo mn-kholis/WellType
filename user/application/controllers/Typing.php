@@ -17,8 +17,20 @@ class Typing extends CI_Controller {
         $data['target'] = $this->Mtyping->getTargetText($id_game);
         $this->load->view('typing', $data);
     }
+    public function video() {
+        $this->load->view('typingvid');
+    }
     public function setflash(){
-        $this->session->set_flashdata('success', 'You successfully completed the challenge, go to the next level.');
+        $this->Mtyping->rubah_level();
+        $this->session->set_flashdata('success', 'You successfully completed the challenge.');
+        redirect('ListGame');
+    }
+    public function erhomerow(){
+        $this->session->set_flashdata('error', 'You need to complete the previous challenge.');
+        redirect('ListGame');
+    }
+    public function erpremrow(){
+        $this->session->set_flashdata('error', 'Get PLUS to open this challenge.');
         redirect('ListGame');
     }
 }
