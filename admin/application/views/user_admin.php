@@ -90,7 +90,7 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Content <small>Artikel</small></h2>
+                                <h2>Admin</h2>
                                 <div class="clearfix"></div>
                             </div>
 
@@ -100,26 +100,21 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Judul Konten</th>
-                                                <th>Konten</th>
-                                                <th>Gambar</th>
+                                                <th>Username</th>
+                                                <th>Email</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($konten as $row): ?>
+                                            <?php foreach ($admin as $row): ?>
                                                 <tr>
-                                                    <th scope="row"><?php echo $row->id_konten; ?></th>
-                                                    <td><?php echo $row->judul_konten; ?></td>
-                                                    <td><?php echo substr($row->konten, 0, 100) . '...'; ?></td>
+                                                    <th scope="row"><?php echo $row->id_admin; ?></th>
+                                                    <td><?php echo $row->username_admin; ?></td>
+                                                    <td><?php echo substr($row->email_admin, 0, 100); ?></td>
                                                     <td class="text-center">
-                                                        <img src="<?php echo base_url('uploads/' . $row->gambar); ?>"
-                                                            width="100" alt="Gambar Konten">
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="<?php echo base_url('index.php/Content/edit/' . $row->id_konten); ?>"
+                                                        <a href="<?php echo base_url('index.php/User_admin/edit/' . $row->id_admin); ?>"
                                                             class="btn btn-warning">Edit</a>
-                                                        <a href="<?php echo base_url('index.php/Content/delete_content/'. $row->id_konten); ?>"
+                                                        <a href="<?php echo base_url('index.php/User_admin/delete_user_admin/'. $row->id_admin); ?>"
                                                             class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Delete</a>
                                                     </td>
                                                 </tr>
@@ -128,7 +123,7 @@
                                     </table>
                                 </div>
                                 <div class="text-left">
-                                    <a href="<?php echo base_url('index.php/Content/add/'); ?>" class="btn btn-primary">Add Content</a>
+                                    <a href="<?php echo base_url('index.php/admin/add/'); ?>" ></a>
                                 </div>
                             </div>
                         </div>

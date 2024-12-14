@@ -17,10 +17,7 @@ class Cgame extends CI_Controller {
     }
 
     public function index() {
-        $userId = $this->session->userdata('id_user');
-        $bestWpmValue = $this->Mwpm->getBestWpm($userId);
-        // print_r($bestWpmValue);
-        // exit();
+        $bestWpmValue = $this->Mwpm->getBestWpm($this->session->userdata('id_user'));
         $data['bestWpm'] = $bestWpmValue->best_wpm;
         $this->load->view('cgame', $data); // Load view dengan data
     }
