@@ -62,7 +62,7 @@
 </nav>
 <div class="">
     <div class="typing-container">
-            <div class="mb-5">
+            <div class="mb-3">
                 <h1><?php echo $judul_text?></h1>
                 <p><?php echo $desk_text?></p>
             </div>
@@ -79,6 +79,7 @@
                 <h5>Click the button :</h5>
                 <span class="key" id="current-key">_</span>
             </div>
+            <img src="<?= base_url('assets/image/keyboard4.png') ?>" width="300">
             <p>your last input :</p>
             <div class="user-inputs"></div>
         </div>
