@@ -80,7 +80,7 @@
     <?php endfor?>
 
     <!-- Top Row Section -->
-    <h4 class="mt-5 fw-bold">Top Row</h4><footer class="mb-5">Get PLUS to see the top row!</footer>
+    <h4 class="mt-5 fw-bold">Top Row</h4><?php if($this->session->userdata("status_user")=='free'):?><footer>Get PLUS to see the top row!</footer>
     <div class="row g-3">
         <!-- Card Template -->
         <?php for ($i = 1; $i <= 20; $i++): ?>
@@ -96,7 +96,10 @@
             </a>
         </div>
         <?php endfor?>
-    </div>
+    </div><?php endif ?>
+    <?php if($this->session->userdata("status_user")=='premium'):?>
+        <h1>Top Row is coming soon!</h1>
+    <?php endif ?>
 </section>
     
 
