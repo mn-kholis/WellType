@@ -41,7 +41,7 @@
                     <a class="nav-link" href="<?= base_url()?>"><strong>Home</strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('userprofile')?>"><strong>Username</strong> <?php //echo htmlspecialchars($username); ?></a>
+                    <a class="nav-link" href="<?= base_url('userprofile')?>"><strong><?= $this->session->userdata('username');?></strong> <?php //echo htmlspecialchars($username); ?></a>
                 </li>
             </ul>
         </div>
@@ -52,42 +52,33 @@
     <h4 class="fw-bold mt-5">Home Row</h4>
     <div class="row g-3">
     <!-- Card Template -->
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="<?= base_url('typing/')?>" class="text-decoration-none text-dark">
+    <?php foreach ($homerow as $v): ?>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+            <a href="<?= base_url('Typing/game/'. $v->id_game)?>" class="text-decoration-none text-dark">
                 <div class="card">
-                    <h4 class="fw-bold m-3">1</h4>
+                    <h4 class="fw-bold m-3"><?= $v->id_game ?></h4>
                     <div class="text-center">
                     <img src="<?= base_url('assets/image/keyboard.png') ?>" alt="Icon" width="70"></div>
-                    <hr class="my-2">
-                    <p class="title text-center">f and j</p>
+                    <hr class="my-2 mt-4">
+                    <p class="title text-center"><?= $v->judul_game ?></p>
                 </div>
             </a>
         </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="" class="text-decoration-none text-dark">
-                <div class="card">
-                    <h4 class="fw-bold m-3">1</h4>
-                    <div class="text-center">
-                    <img src="<?= base_url('assets/image/gembok.png') ?>" alt="Icon" width="70"></div>
-                    <hr class="my-2">
-                    <p class="title text-center">title</p>
-                </div>
-            </a>
-        </div>
+    <?php endforeach; ?>
     </div>
 
     <!-- Top Row Section -->
-    <h4 class="mt-5 mb-4 fw-bold">Top Row</h4>
+    <h4 class="mt-5 fw-bold">Top Row</h4><footer class="mb-5">Get PLUS to see the top row!</footer>
     <div class="row g-3">
         <!-- Card Template -->
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
             <a href="" class="text-decoration-none text-dark">
                 <div class="card">
                     <h4 class="fw-bold m-3">1</h4>
                     <div class="text-center">
                     <img src="<?= base_url('assets/image/gembok.png') ?>" alt="Icon" width="70"></div>
-                    <hr class="my-2">
-                    <p class="title text-center">title</p>
+                    <hr class="my-2 mt-4">
+                    <p class="title text-center">locked</p>
                 </div>
             </a>
         </div>
@@ -95,6 +86,12 @@
 </section>
     
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+<?php if($this->session->flashdata("success")): ?>
+    <script>
+        swal("Successful!", "<?php echo $this->session->flashdata("succes");?>", "success");
+    </script>
+<?php endif ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

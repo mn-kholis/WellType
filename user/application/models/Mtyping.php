@@ -2,13 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mtyping extends CI_Model {
-    public function getTargetText() {
-        // Contoh: Ambil data dari database (table 'typing_texts')
-        $this->db->select('text_game');
+    public function getTargetText($id_game) {
+        $this->db->where('id_game', $id_game);
         $this->db->from('game');
         // $this->db->order_by('id', 'RANDOM'); // Ambil secara acak
         $query = $this->db->get();
-        return $query->row()->text_game;
+        return $query->row();
     }
     public function getJudulText() {
         // Contoh: Ambil data dari database (table 'typing_texts')

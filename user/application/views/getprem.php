@@ -48,7 +48,7 @@
     </nav>
 
     <!-- Main view -->
-    <div class="container py-5 mt-5">
+    <div class="container py-3">
         <div class="row shadow rounded bg-white p-0">
             <!-- Left Section -->
             <div class="col-md-6 p-5">
@@ -56,26 +56,26 @@
                 <? if(!empty($snapToken)) : ?>
                 <button id="pay-button" class="btn btn-lg btn-warning fw-bold px-4 py-2 mb-4">Upgrade to PLUS</button>
                 <? endif; ?>
-                <h4 class="text-muted">With Only</h4>
+                <h4 class="text-muted mt-2">With Only</h4>
                 <h3 class="text-muted"><strong>Rp25.000,00</strong></h3>
-                <h4 class="text-muted">pay once for all time</h4>
-                <ul class="list-unstyled">
+                <h4 class="text-muted mb-2">pay once for all time</h4>
+                <ul class="list-unstyled mt-5 fw-bold">
+                    <li class="mb-3"><span class="text-warning"></span> what you'll get :</li>
                     <li class="mb-3"><span class="text-warning">👑</span> Remove All Ads</li>
-                    <li class="mb-3"><span class="text-warning">👑</span> Computer Basics Curriculum</li>
-                    <li class="mb-3"><span class="text-warning">👑</span> Online Behavior & Safety Curriculum</li>
-                    <li class="mb-3"><span class="text-warning">👑</span> Coding Fundamentals Curriculum</li>
+                    <li class="mb-3"><span class="text-warning">👑</span> Performance Analytics</li>
+                    <li class="mb-3"><span class="text-warning">👑</span> Access to Advanced Typing Drills</li>
+                    <li class="mb-3"><span class="text-warning">👑</span> Speed Test Leaderboards</li>
                     <li><span class="text-warning">👑</span> Priority Support</li>
                 </ul>
             </div>
 
             <!-- Right Section -->
-            <div class="col-md-6 text-center p-5 align-content-center" style="background-color: #208DC5;">
+            <div class="col-md-6 text-center p-5 align-content-center" style="background: linear-gradient(to bottom, #208DC5, #5DB9E3);">
                 <blockquote class="blockquote">
-                    <p class="fst-italic">"Great program! Engaging and very easy to use. My students love it!"</p>
-                    <footer class="blockquote-footer text-white">Azucena T.</footer>
+                    <h4 class="fst-italic fw-bold">"It's never too late to learn,<br>the most important thing is not to put it off."</h4>
+                    <footer class="blockquote-footer mt-3 text-black">Mn Khoo.</footer>
                 </blockquote>
                 <h1 class="text-white fw-bold mt-4">#1 Worldwide Keyboarding Curriculum</h1>
-                <p class="text-white mt-3">80 million+ Global Users</p>
                 <p class="text-white">20+ Years Trusted Experience</p>
                 <small class="text-white">As seen in Inc., The Wall Street Journal, New York Post, The Times</small>
             </div>

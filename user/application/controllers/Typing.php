@@ -12,12 +12,14 @@ class Typing extends CI_Controller {
         }
     }
 
-    public function index() {
+    public function game($id_game) {
         // Ambil teks target dari database
-        $data['target_text'] = $this->Mtyping->getTargetText();
-        $data['desk_text'] = $this->Mtyping->getDeskripsiText();
-        $data['judul_text'] = $this->Mtyping->getJudulText();
+        $data['target'] = $this->Mtyping->getTargetText($id_game);
         $this->load->view('typing', $data);
+    }
+    public function setflash(){
+        $this->session->set_flashdata('success', 'You successfully completed the challenge, go to the next level.');
+        redirect('ListGame');
     }
 }
 

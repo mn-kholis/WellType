@@ -12,6 +12,9 @@ class ListGame extends CI_Controller {
         }
     }
     public function index() {
-        $this->load->view('listgame');
+        $this->load->model('Mlist'); // Load model Anda
+        $data['homerow'] = $this->Mlist->homerow();
+        $data['premrow'] = $this->Mlist->premrow();
+        $this->load->view('listgame', $data);
     }
 }

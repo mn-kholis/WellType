@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Trainer</title>
+    <title>WellType</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
@@ -51,7 +51,7 @@
                 </li>
                 <?php endif ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('userprofile')?>"><strong>Username</strong> <?php //echo htmlspecialchars($username);?></a>
+                    <a class="nav-link" href="<?= base_url('userprofile')?>"><strong><?= $this->session->userdata('username');?></strong></a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-light btn-sm fw-bold mt-2 ms-3" href="<?= base_url('listgame') ?>">Back</a>
@@ -63,12 +63,12 @@
 <div class="">
     <div class="typing-container">
             <div class="mb-5">
-                <h1><?php echo $judul_text?></h1>
-                <p><?php echo $desk_text?></p>
+                <h1><?php echo $target->judul_game?></h1>
+                <p><?php echo $target->deskripsi_game?></p>
             </div>
             <div class="text-display">
                 <p id="target-text">
-                    <?php foreach (str_split($target_text) as $char): ?>
+                    <?php foreach (str_split($target->text_game) as $char): ?>
                         <span class="char" data-key="<?= strtolower($char) ?>">
                             <?= $char === ' ' ? '&nbsp;' : $char ?>
                         </span>

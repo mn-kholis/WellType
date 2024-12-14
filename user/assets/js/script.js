@@ -58,8 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (currentIndex === targetText.length) {
-            alert('Well done!');
-            window.location.href = "http://localhost/WellType/WellType/user/listgame/";
+            window.location.href = "http://localhost/WellType/WellType/user/Typing/setflash/";
         }
     });
 });

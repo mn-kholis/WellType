@@ -9,7 +9,11 @@
 <style>
         body {
             background-color: white;
-            margin-top: 50px; 
+            margin-top: 50px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
         .navbar {
             position: fixed;
@@ -63,14 +67,6 @@
         .button button:hover {
             background-color: #ddd;
         }
-        <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -248,7 +244,7 @@
                     <p class="card-title">Apa Itu Metode Mengetik dengan 10 Jari?
                     </p>
                     <p class="card-description">Metode mengetik dengan 10 jari adalah teknik mengetik yang melibatkan semua jari tangan untuk
-                         mengetik di keyboard tanpa melihat tombol. 
+                        mengetik di keyboard tanpa melihat tombol. 
                     </p>
                 </div>
             </div>
