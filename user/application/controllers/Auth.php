@@ -40,7 +40,7 @@ public function signup() {
         $m['status_user'] = "free";
         $m['total_reward'] = 0;
         $m['best_wpm'] = 0;
-        $m['level_user'] = 0;
+        $m['level_user'] = 1;
         $m['tgl_reg_user'] = date('Y-m-d');
         
         $this->load->model("Mmember");
