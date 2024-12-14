@@ -150,7 +150,7 @@
 
         .welcome-text {
             position: relative; /* Jika ingin menggunakan top */
-            top: -250px; /* Geser elemen ke atas */
+            top: -300px; /* Geser elemen ke atas */
             margin-top: -20px; /* Alternatif jika tidak menggunakan posisi relatif */
             text-align: left;
         }
@@ -200,10 +200,10 @@
     </nav>
     <div class="background-container">
     <div class="content mb-5">
-                    <img src="<?= base_url('assets/image/logo.png') ?>" alt="logo" width="400" class="mb-3">
+                    <img src="<?= base_url('assets/image/logo.gif') ?>" alt="logo" width="40%" class="mb-3">
                 </div>
                 <div class="welcome-text">
-                    <h3 class=" ms-5 fw-bold" style="font: ">Hallo... <br>Good Morning</h3>
+                    <h3 class=" ms-5 fw-bold">Hallo... <br>Good Morning</h3>
                     <p class="ms-5 fw-bold">Track your typing progress and improve your skills.</p>
     </div>
     </div>

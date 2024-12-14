@@ -63,10 +63,10 @@
 <div class="">
     <div class="typing-container">
             <video width="80%" controls>
-                <source src="<?= base_url('assets/image/edclub.mp4'); ?>" type="video/mp4">
+                <source src="<?= base_url('assets/image/vidwell.mp4'); ?>" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <br><br><br><a class="btn btn-primary" href="<?= base_url('Typing/game/1')?>">Skip Video</a>
+            <br><a class="btn btn-primary" href="<?= base_url('Typing/game/1')?>">Skip Video</a>
 </div>
     
 </body>
