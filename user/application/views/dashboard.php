@@ -218,7 +218,7 @@
             <h2>About Us</h2>
             <hr class="my-4 mb-3" />
             <p>
-            WellType adalah sebuah website yang dirancang untuk membantu pengguna belajar mengetik dengan sepuluh jari secara efisien. Website ini menyediakan berbagai latihan dan tips untuk meningkatkan kecepatan dan akurasi mengetik, sehingga pengguna dapat menguasai keterampilan mengetik dalam waktu singkat. Dengan antarmuka yang ramah pengguna, WellType memberikan pengalaman belajar yang menyenangkan dan efektif untuk semua level kemampuan.
+            WellType is a website designed to help users learn to type with ten fingers efficiently. The website provides various exercises and tips to improve typing speed and accuracy, so users can master typing skills in no time. With a user-friendly interface, WellType provides a fun and effective learning experience for all skill levels.
             </p>
             <br /><br />
         </div>

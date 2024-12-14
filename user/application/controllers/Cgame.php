@@ -17,7 +17,7 @@ class Cgame extends CI_Controller {
     }
 
     public function index() {
-        $userId = $this->session->userdata('user_id');
+        $userId = $this->session->userdata('id_user');
         $bestWpmValue = $this->Mwpm->getBestWpm($userId);
         $data['bestWpm'] = $bestWpmValue->best_wpm;
         $this->load->view('cgame', $data); // Load view dengan data
@@ -33,7 +33,7 @@ class Cgame extends CI_Controller {
                 $this->load->model('Mwpm');
                 
                 // Simpan Best WPM ke database
-                $result = $this->Mwpm->updateBestWpm($this->session->userdata('user_id'), $bestWpm);
+                $result = $this->Mwpm->updateBestWpm($this->session->userdata('id_user'), $bestWpm);
                 //$result = $this->Mwpm->updateBestWpm(1, $bestWpm);
                 if ($result) {
                     echo json_encode(['success' => true]);
