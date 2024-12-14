@@ -6,7 +6,7 @@ class Mlist extends CI_Model
     public function homerow()
     {
         $this->db->where('id_game >=', 1);
-        $this->db->where('id_game <=', 10);
+        $this->db->where('id_game <=', $this->session->userdata('level_user'));
         $query = $this->db->get('game');
         return $query->result();
     }

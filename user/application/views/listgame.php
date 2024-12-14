@@ -48,13 +48,13 @@
     </div>
 </nav>
 <!-- Main Content -->
-<section class="container mt-5">
+<section class="container mt-5 mb-5">
     <h4 class="fw-bold mt-5">Home Row</h4>
     <div class="row g-3">
     <!-- Card Template -->
     <?php foreach ($homerow as $v): ?>
         <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-            <a href="<?= base_url('Typing/game/'. $v->id_game)?>" class="text-decoration-none text-dark">
+            <a href="<?php if ($v->id_game == 1): echo base_url('Typing/video'); else: echo base_url('Typing/game/' . $v->id_game); endif; ?>" class="text-decoration-none text-dark">
                 <div class="card">
                     <h4 class="fw-bold m-3"><?= $v->id_game ?></h4>
                     <div class="text-center">
@@ -65,16 +65,11 @@
             </a>
         </div>
     <?php endforeach; ?>
-    </div>
-
-    <!-- Top Row Section -->
-    <h4 class="mt-5 fw-bold">Top Row</h4><footer class="mb-5">Get PLUS to see the top row!</footer>
-    <div class="row g-3">
-        <!-- Card Template -->
+    <?php for ($i = $this->session->userdata('level_user')+1; $i <= 16; $i++): ?>
         <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-            <a href="" class="text-decoration-none text-dark">
+            <a href="<?= base_url('Typing/erhomerow')?>" class="text-decoration-none text-dark">
                 <div class="card">
-                    <h4 class="fw-bold m-3">1</h4>
+                    <h4 class="fw-bold m-3"><?= $i?></h4>
                     <div class="text-center">
                     <img src="<?= base_url('assets/image/gembok.png') ?>" alt="Icon" width="70"></div>
                     <hr class="my-2 mt-4">
@@ -82,6 +77,25 @@
                 </div>
             </a>
         </div>
+    <?php endfor?>
+
+    <!-- Top Row Section -->
+    <h4 class="mt-5 fw-bold">Top Row</h4><footer class="mb-5">Get PLUS to see the top row!</footer>
+    <div class="row g-3">
+        <!-- Card Template -->
+        <?php for ($i = 1; $i <= 20; $i++): ?>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+            <a href="<?= base_url('Typing/erpremrow')?>" class="text-decoration-none text-dark">
+                <div class="card">
+                    <h4 class="fw-bold m-3"><?= $i?></h4>
+                    <div class="text-center">
+                    <img src="<?= base_url('assets/image/gembok.png') ?>" alt="Icon" width="70"></div>
+                    <hr class="my-2 mt-4">
+                    <p class="title text-center">locked</p>
+                </div>
+            </a>
+        </div>
+        <?php endfor?>
     </div>
 </section>
     
@@ -89,7 +103,12 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
 <?php if($this->session->flashdata("success")): ?>
     <script>
-        swal("Successful!", "<?php echo $this->session->flashdata("succes");?>", "success");
+        swal("Successful!", "<?php echo $this->session->flashdata("success");?>", "success");
+    </script>
+<?php endif ?>
+<?php if($this->session->flashdata("error")): ?>
+    <script>
+        swal("Error!", "<?php echo $this->session->flashdata("error");?>", "error");
     </script>
 <?php endif ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
