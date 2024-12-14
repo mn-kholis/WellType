@@ -230,16 +230,16 @@
         <h1 class="text-center">Artikel Terbaru</h1>
         <div class="grid">
             <div class="card">
-                <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Sweater Oversized Crewneck">
+                <img src="<?= base_url('assets/image/artikel1.jpg') ?>" alt="Sweater Oversized Crewneck">
                 <div class="card-content">
-                    <p class="card-title">Mengapa Belajar Mengetik dengan 10 Jari Penting untuk Masa Depan Anda?
+                    <p class="card-title">Mengapa Belajar Mengetik Penting untuk Masa Depan?
                     </p>
                     <p class="card-description">Di era digital saat ini, mengetik adalah salah satu keterampilan dasar yang wajib dimiliki.
                     </p>
                 </div>
             </div>
             <div class="card">
-                <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Gamis Adeline Maxi Shakila">
+                <img src="<?= base_url('assets/image/artikel2.jpeg') ?>" alt="Gamis Adeline Maxi Shakila">
                 <div class="card-content">
                     <p class="card-title">Apa Itu Metode Mengetik dengan 10 Jari?
                     </p>
@@ -249,17 +249,17 @@
                 </div>
             </div>
             <div class="card">
-                <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Pashmina Kaos">
+                <img src="<?= base_url('assets/image/artikel3.jpeg') ?>" alt="Pashmina Kaos">
                 <div class="card-content">
                     <p class="card-title">Manfaat Mengetik dengan 10 Jari
                     </p>
-                    <p class="card-description">Meningkatkan Kecepatan dan Akurasi Dengan metode ini, Anda dapat mengetik lebih cepat dan akurat dibandingkan mengetik
+                    <p class="card-description">Meningkatkan Kecepatan dan Akurasi Dengan metode ini,dapat mengetik lebih cepat dan akurat dibandingkan mengetik
                         dengan cara melihat keyboard. 
                     </p>
                 </div>
             </div>
             <div class="card">
-                <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Jilbab Bahan Paris">
+                <img src="<?= base_url('assets/image/artikel4.jpg') ?>" alt="Jilbab Bahan Paris">
                 <div class="card-content">
                     <p class="card-title">Tips Belajar Mengetik dengan 10 Jari
                     </p>
