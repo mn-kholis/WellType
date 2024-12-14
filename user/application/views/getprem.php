@@ -19,6 +19,10 @@
         .navbar-brand, .nav-link {
             color: white !important;
         }
+        #pay-button:hover {
+        background-color:#2d3e50;
+        color: white;
+        }
     </style>
 
 <script type="text/javascript"
@@ -50,10 +54,11 @@
             <div class="col-md-6 p-5">
                 <h1 class="fw-bold mb-4">Upgrade Your Typing Skills With <span class="text-warning">PLUS</span></h1>
                 <? if(!empty($snapToken)) : ?>
-                <button id="pay-button" class="btn btn-lg btn-warning text-white fw-bold px-4 py-2 mb-3">Upgrade to PLUS</button>
+                <button id="pay-button" class="btn btn-lg btn-warning fw-bold px-4 py-2 mb-4">Upgrade to PLUS</button>
                 <? endif; ?>
-                <pre><div id="result-json"><br></div></pre>
-                <p class="text-muted mb-4">Rp25.000,00 per month</p>
+                <h4 class="text-muted">With Only</h4>
+                <h3 class="text-muted"><strong>Rp25.000,00</strong></h3>
+                <h4 class="text-muted">pay once for all time</h4>
                 <ul class="list-unstyled">
                     <li class="mb-3"><span class="text-warning">👑</span> Remove All Ads</li>
                     <li class="mb-3"><span class="text-warning">👑</span> Computer Basics Curriculum</li>
@@ -76,7 +81,7 @@
             </div>
         </div>
     </div>
-
+<pre><div id="result-json"><br></div></pre>
     <? if(!empty($snapToken)) : ?>
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-FDWkoci2_UHYFFOG"></script>
     <script type="text/javascript">
