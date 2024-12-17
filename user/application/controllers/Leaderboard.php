@@ -11,6 +11,8 @@ class Leaderboard extends CI_Controller {
     }
 	public function index()
 	{
-		$this->load->view('leaderboard');
+        $this->load->model('Mlist');
+        $data['lead'] = $this->Mlist->get_top_10_rewards();
+		$this->load->view('leaderboard', $data);
 	}
 }

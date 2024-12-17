@@ -182,7 +182,7 @@
                         <a class="nav-link" href="leaderboard"><strong>Leaderboard</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="userprofile"><strong>Profile</strong></a>
+                        <a class="nav-link" href="Userprofile"><strong>Profile</strong></a>
                     </li>
                     <?php if(!$this->session->userdata("username")):?>
                     <li class="nav-item">
@@ -229,45 +229,15 @@
     <div class="container">
         <h1 class="text-center">Artikel Terbaru</h1>
         <div class="grid">
+        <?php foreach ($artikel as $k) : ?>
             <div class="card">
-                <img src="<?= base_url('assets/image/artikel1.jpg') ?>" alt="Sweater Oversized Crewneck">
+                <img src="<?= base_url('assets/image/'.$k->gambar) ?>" alt="Sweater Oversized Crewneck">
                 <div class="card-content">
-                    <p class="card-title">Mengapa Belajar Mengetik Penting untuk Masa Depan?
-                    </p>
-                    <p class="card-description">Di era digital saat ini, mengetik adalah salah satu keterampilan dasar yang wajib dimiliki.
-                    </p>
+                    <p class="card-title"><?= $k->judul_konten?></p>
+                    <p class="card-description"><?= $k->konten?></p>
                 </div>
             </div>
-            <div class="card">
-                <img src="<?= base_url('assets/image/artikel2.jpeg') ?>" alt="Gamis Adeline Maxi Shakila">
-                <div class="card-content">
-                    <p class="card-title">Apa Itu Metode Mengetik dengan 10 Jari?
-                    </p>
-                    <p class="card-description">Metode mengetik dengan 10 jari adalah teknik mengetik yang melibatkan semua jari tangan untuk
-                        mengetik di keyboard tanpa melihat tombol. 
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="<?= base_url('assets/image/artikel3.jpeg') ?>" alt="Pashmina Kaos">
-                <div class="card-content">
-                    <p class="card-title">Manfaat Mengetik dengan 10 Jari
-                    </p>
-                    <p class="card-description">Meningkatkan Kecepatan dan Akurasi Dengan metode ini,dapat mengetik lebih cepat dan akurat dibandingkan mengetik
-                        dengan cara melihat keyboard. 
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="<?= base_url('assets/image/artikel4.jpg') ?>" alt="Jilbab Bahan Paris">
-                <div class="card-content">
-                    <p class="card-title">Tips Belajar Mengetik dengan 10 Jari
-                    </p>
-                    <p class="card-description">Kenali Posisi Dasar Tempatkan jari-jari Anda pada tombol "home row" (ASDF untuk tangan kiri dan JKL; untuk tangan kanan). 
-                        Ibu jari Anda berada di tombol spasi.
-                    </p>
-                </div>
-            </div>
+        <?php endforeach?>
         </div>
     </div>
 </body>

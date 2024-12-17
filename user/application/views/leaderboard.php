@@ -13,39 +13,6 @@
         .navbar-brand, .nav-link {
             color: white !important;
         }
-        .leaderboard-header {
-            position: relative; 
-            margin-bottom: 30px;
-        }
-        .leaderboard-header img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%; 
-            object-fit: cover;
-            border: 3px solid #ffffff;
-        }
-        .x {
-            position: absolute; 
-            top: -30px; 
-            left: 50%;
-            transform: translateX(-50%); 
-        }
-        .col-4 {
-            text-align: center;
-        }
-        .col-4 p {
-            margin: 5px 0 0;
-            font-weight: bold;
-        }
-        .x p {
-            margin: 5px 0 0;
-            font-weight: bold;
-        }
-        .row {
-            display: flex; /* Pastikan elemen menggunakan Flexbox */
-            justify-content: center; /* Sejajarkan konten di tengah secara horizontal */
-            gap: 10px; /* Berikan jarak antar elemen */
-        }
         .table th:first-child, .table td:first-child {
             width: 50px; 
             text-align: center;
@@ -54,6 +21,79 @@
             width: 100px; 
             text-align: center;
         }
+        /* Container utama untuk center layout */
+        .top-players {
+            display: flex;
+            justify-content: center;
+            gap: 150px;
+            margin-top: 20px;
+        }
+
+        /* Card setiap pemain */
+        .player-card {
+            position: relative;
+            text-align: center;/* Warna latar belakang */
+            padding: 10px;
+            border-radius: 10px;
+            width: 120px;
+        }
+
+        /* Gambar pemain */
+        .player-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Membuat gambar melingkar */
+            border: 5px solid #4CAF50; /* Bingkai hijau default */
+        }
+
+        /* Top 1 dengan bingkai emas */
+        .top-1 img {
+            border-color: gold;
+        }
+
+        /* Top 2 dengan bingkai perak */
+        .top-2 img {
+            border-color: silver;
+        }
+
+        /* Top 3 dengan bingkai perunggu */
+        .top-3 img {
+            border-color: #CD7F32;
+        }
+
+        /* Angka Rank (1, 2, 3) */
+        .rank-number {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffcc00; /* Warna kuning */
+            color: #000; /* Warna teks */
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+        }
+
+        /* Khusus untuk Top 1 dengan icon mahkota */
+        .rank-number.crown {
+            background-color: gold;
+            color: black;
+        }
+
+        /* Style teks skor */
+        .score {
+            
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffa500; /* Warna oranye */
+        }
+
     </style>
 </head>
 <body>
@@ -81,28 +121,32 @@
 
     <!-- Leaderboard -->
     <div class="container my-5">
-        <div class="leaderboard-header text-center">
-            <!-- Ranking 1 (Class x) -->
-            <div class="x">
-                <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="1st Place">
-                <p class="mb-0">Username</p>
-                <p>Score</p>
+        <div class="top-players">
+            <!-- Top 2 -->
+            <div class="player-card top-2">
+                <div class="rank-number">2</div>
+                <img src="<?= base_url('assets/image/Gree.jpg') ?>" alt="2nd Place">
+                <p class="fw-bold"><?= htmlspecialchars($lead[1]->username_user); ?></p>
+                <p class="score"><?= number_format($lead[1]->total_reward); ?></p>
             </div>
-            <div class="row align-items-center justify-content-center">
-                <!-- Ranking 2 -->
-                <div class="col-4">
-                    <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="2nd Place">
-                    <p class="mb-0">Username</p>
-                    <p>Score</p>
-                </div>
-                <!-- Ranking 3 -->
-                <div class="col-4">
-                    <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="3rd Place">
-                    <p class="mb-0">Username</p>
-                    <p>Score</p>
-                </div>
+
+            <!-- Top 1 -->
+            <div class="player-card top-1">
+                <div class="rank-number crown">1</div>
+                <img src="<?= base_url('assets/image/gree.jpeg') ?>" alt="1st Place">
+                <p class="fw-bold"><?= htmlspecialchars($lead[0]->username_user); ?></p>
+                <p class="score"><?= number_format($lead[0]->total_reward); ?></p>
+            </div>
+
+            <!-- Top 3 -->
+            <div class="player-card top-3">
+                <div class="rank-number">3</div>
+                <img src="<?= base_url('assets/image/Gree.jpg') ?>" alt="3rd Place">
+                <p class="fw-bold"><?= htmlspecialchars($lead[2]->username_user); ?></p>
+                <p class="score"><?= number_format($lead[2]->total_reward); ?></p>
             </div>
         </div>
+
         <!-- Leaderboard Table -->
         <div class="table-container">
             <table class="table table-striped table-bordered">
@@ -115,21 +159,14 @@
                 </thead>
                 <tbody class="text-center">
                     <!-- Data leaderboard -->
+                    <?php $rank =1;?>
+                    <?php foreach ($lead as $k) : ?>
                     <tr>
-                        <td>1</td>
-                        <td>User One</td>
-                        <td>1500</td>
+                        <td><?= $rank++;?></td>
+                        <td><?= $k->username_user?></td>
+                        <td><?= $k->total_reward?></td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>User Two</td>
-                        <td>1400</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>User Three</td>
-                        <td>1300</td>
-                    </tr>
+                    <?php endforeach?>
                     <!-- Tambahkan baris lainnya -->
                 </tbody>
             </table>

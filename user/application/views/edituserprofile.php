@@ -92,34 +92,36 @@
                 <div class="profile-card shadow">
                     <h4 class="mb-4"><Strong>Change Profile</Strong></h4>
                     <div class="row align-items center">
-                        <div class="col-md-3 text-center">
-                            <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Profile Picture" class="img-fluid rounded-circle" width="100">
+                        <div class="col">
+                            <?php
+                                // Cek apakah foto_user tidak kosong
+                                $image_path = !empty($user->foto_user) 
+                                            ? base_url('assets/image/' . $user->foto_user) 
+                                            : base_url('assets/image/blankpp.jpg');
+                            ?>
+                            <div class="text-center">
+                                <img src="<?= $image_path ?>" alt="Profile Picture" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                            </div>
                             <!-- Upload Profile Picture -->
-                            <form action="upload.php" method="POST" enctype="multipart/form-data">
-                                <div class="mt-2">
+                            <form method="POST" enctype="multipart/form-data">
+                                <div class="mt-2 mb-3">
                                     <input type="file" class="form-control" id="profile_picture" name="profile_picture">
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-2">Upload</button>
-                            </form>
-                        </div>
-                        <div class="col-md-9">
-                            <form action="update_profile.php" method="POST">
                                 <div class="mb-3">
                                     <label for="username" class="form-label "><strong>Username</strong></label>
-                                    <input type="text" class="form-control" id="username" name="username" value="">
+                                    <input type="text" class="form-control" id="username" name="username" value="<?= $user->username_user ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label"><strong>Email</strong></label>
-                                    <input type="email" class="form-control" id="email" name="email" value="" >
+                                    <input type="email" class="form-control" id="email" name="email" value="<?= $user->email_user?>" >
                                 </div>
                                 <div class="mb-3">
                                     <button type="submit" class="btn btn-primary">Save Changes</button>
                                 </div>
                             </form>
                             <!-- Member Since -->
-                            <div class="member-since">
-                                Member since: 02/12/2024 <?php //echo $member_since; ?>
-                            </div>
+                            <p class="member-since">
+                                Member since:  <?= $user->tgl_reg_user; ?></p>
                         </div>
                     </div>
                 </div>
@@ -131,7 +133,7 @@
                     <ul class="list-unstyled">
                         <li><a href="<?= site_url('userprofile') ?>" class="text-decoration-none">Profile</a></li>
                         <li><a href="<?= site_url('ubahpass') ?>" class="text-decoration-none">Change Password</a></li>
-                        <li><a href="<?= site_url('edituserprofile') ?>" class="text-decoration-none" id="x">Change Profile</a></li>
+                        <li><a href="<?= site_url('Userprofile/edit') ?>" class="text-decoration-none" id="x">Change Profile</a></li>
                         <?php if($this->session->userdata("status_user")=='premium'):?>
                         <li><a href="<?= site_url('performanceanalysis') ?>" class="text-decoration-none">Performance Analysis</a></li>
                         <?php endif; ?>
@@ -144,5 +146,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <?php if($this->session->flashdata("pesan_sukses")): ?>
+<script>
+    swal("Sukses!", "<?php echo $this->session->flashdata("pesan_sukses");?>", "success");
+</script>
+<?php endif ?>  
+<?php if($this->session->flashdata("pesan_gagal")): ?>
+    <script>
+        swal("gagal!", "<?php echo $this->session->flashdata("pesan_gagal");?>", "error");
+    </script>
+<?php endif ?>
 </body>
 </html>

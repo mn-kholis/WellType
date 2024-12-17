@@ -64,7 +64,7 @@
                     <li class="mb-3"><span class="text-warning">👑</span> Remove All Ads</li>
                     <li class="mb-3"><span class="text-warning">👑</span> Performance Analytics</li>
                     <li class="mb-3"><span class="text-warning">👑</span> Access to Advanced Typing Drills</li>
-                    <li class="mb-3"><span class="text-warning">👑</span> Speed Test Leaderboards</li>
+                    <li class="mb-3"><span class="text-warning">👑</span> Opportunity to enter the world leaderboard</li>
                     <li><span class="text-warning">👑</span> Priority Support</li>
                 </ul>
             </div>

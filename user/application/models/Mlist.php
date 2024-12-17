@@ -16,4 +16,21 @@ class Mlist extends CI_Model
         $query = $this->db->get('game');
         return $query->result();
     }
+    public function get_top_10_rewards() {
+        $this->db->where('status_user', 'premium');
+        $this->db->from('user'); // Ganti dengan nama tabel Anda
+        $this->db->order_by('total_reward', 'DESC'); // Urutkan dari terbesar ke terkecil
+        $this->db->limit(10); // Ambil hanya 10 data teratas
+        $query = $this->db->get(); // Jalankan query
+
+        return $query->result(); // Kembalikan hasil dalam bentuk objek
+    }
+    public function get_artikel() {
+        $this->db->from('konten'); // Ganti dengan nama tabel Anda
+        $this->db->order_by('id_konten', 'DESC'); // Urutkan dari terbesar ke terkecil
+        $this->db->limit(4); // Ambil hanya 10 data teratas
+        $query = $this->db->get(); // Jalankan query
+
+        return $query->result(); // Kembalikan hasil dalam bentuk objek
+    }
 }

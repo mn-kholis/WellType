@@ -92,7 +92,13 @@
                     <h4 class="mb-4"><strong>Profile</strong></h4>
                     <div class="row align-items">
                         <div class="col-md-3 text-center">
-                            <img src="<?= base_url('assets/image/gree.jpg') ?>" alt="Profile Picture" class="img-fluid rounded-circle" width="100">
+                            <?php
+                                // Cek apakah foto_user tidak kosong
+                                $image_path = !empty($user->foto_user) 
+                                            ? base_url('assets/image/' . $user->foto_user) 
+                                            : base_url('assets/image/blankpp.jpg');
+                            ?>
+                            <img src="<?= $image_path ?>" alt="Profile Picture" class="img-fluid rounded-circle" width="100">
                         </div>
                         <div class="col-md-9">
                             <form>
@@ -132,7 +138,7 @@
                     <ul class="list-unstyled">
                         <li><a href="<?= site_url('userprofile') ?>" class="text-decoration-none" id="x">Profile</a></li>
                         <li><a href="<?= site_url('ubahpass') ?>" class="text-decoration-none">Change Password</a></li>
-                        <li><a href="<?= site_url('edituserprofile') ?>" class="text-decoration-none">Change Profile</a></li>
+                        <li><a href="<?= site_url('Userprofile/edit') ?>" class="text-decoration-none">Change Profile</a></li>
                         <?php if($this->session->userdata("status_user")=='premium'):?>
                         <li><a href="<?= site_url('performanceanalysis') ?>" class="text-decoration-none">Performance Analysis</a></li>
                         <?php endif; ?>

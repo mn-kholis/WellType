@@ -19,11 +19,11 @@ class Mmember extends CI_Model {
             $this->session->set_userdata("email_user", $cekmember['email_user']);
             $this->session->set_userdata("status_user", $cekmember['status_user']);
             $this->session->set_userdata("level_user", $cekmember['level_user']);
-            // $data = array(
-            //     'logterakhir_user' => date('Y-m-d') 
-            // );
-            // $this->db->where('id_user', $cekmember['id_user']);
-            // $this->db->update('user', $data);
+            $data = array(
+                'logterakhir_user' => date('Y-m-d') 
+            );
+            $this->db->where('id_user', $cekmember['id_user']);
+            $this->db->update('user', $data);
             return "ada";
         }else{
             return "ga ada";
@@ -42,5 +42,11 @@ class Mmember extends CI_Model {
         
         $this->session->set_userdata("status_user", "premium");
     
+    }
+    public function edit_user($id_user, $data) {
+        $this->session->set_userdata("username", $data['username_user']);
+        $this->session->set_userdata("email_user", $data['email_user']);
+        $this->db->where('id_user', $id_user);
+        return $this->db->update('user', $data); // Memperbarui data berdasarkan id_admin
     }
 }

@@ -107,7 +107,7 @@
                     <ul class="list-unstyled">
                         <li><a href="<?= site_url('userprofile') ?>">Profile</a></li>
                         <li><a href="<?= site_url('ubahpass') ?>" class="active">Change Password</a></li>
-                        <li><a href="<?= site_url('edituserprofile') ?>">Change Profile</a></li>
+                        <li><a href="<?= site_url('Userprofile/edit') ?>">Change Profile</a></li>
                         <?php if($this->session->userdata("status_user")=='premium'):?>
                         <li><a href="<?= site_url('performanceanalysis') ?>" class="text-decoration-none">Performance Analysis</a></li>
                         <?php endif; ?>
