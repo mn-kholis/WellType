@@ -11,8 +11,9 @@ Release Information
 This repo contains in-development code for future releases. 
 
 *******
-License
+CopyRIght
 *******
 
-Please see the `license
+Please see the copyright
+Copyright © 2024. WellType
 
