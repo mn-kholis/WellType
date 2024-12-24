@@ -14,6 +14,7 @@ This repo contains in-development code for future releases.
 CopyRIght
 *******
 
-Please see the copyright
+Please see the copyright.
+
 Copyright © 2024. WellType
 
