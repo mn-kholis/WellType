@@ -5,6 +5,8 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('dashboard');
+        $this->load->model('Mlist');
+        $data['artikel'] = $this->Mlist->get_artikel();
+		$this->load->view('dashboard', $data);
 	}
 }

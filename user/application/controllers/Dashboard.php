@@ -5,6 +5,8 @@ class dashboard extends CI_Controller {
 	{
         $this->load->model('Mlist');
         $data['artikel'] = $this->Mlist->get_artikel();
-		$this->load->view('dashboard', $data);
+		print_r($data);
+		exit();
+		$this->load->view('Dashboard', $data);
 	}
 }
