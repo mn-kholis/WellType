@@ -14,6 +14,7 @@ class Madmin extends CI_Model{
 		if (!empty($cekadmin)) {
 			$this->session->set_userdata("id_admin", $cekadmin["id_admin"]);
 			$this->session->set_userdata("username", $cekadmin["username_admin"]);
+			$this->session->set_userdata("status_admin", $cekadmin["status_admin"]);
 			return "ada";
 		} else{
 			return "tidak ada";

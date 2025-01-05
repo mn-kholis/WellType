@@ -30,7 +30,7 @@
     <div class="login_wrapper">
     <div class="animate form login_form">
         <section class="login_content">
-        <form action ="<?php echo base_url('Auth'); ?>" method="post">
+        <form action ="" method="post">
             <h1>Login Form</h1>
             <div>
             <input type="text" class="form-control" placeholder="Username" name="username" required="" />

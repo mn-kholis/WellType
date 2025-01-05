@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
+class Auth_admin extends CI_Controller {
     public function index()
 	{
 		$inputan = $this->input->post();
@@ -18,14 +18,14 @@ class Auth extends CI_Controller {
 
 			if ($output=="ada") {
 				$this->session->set_flashdata('pesan_sukses',"Berhasil Login");
-				redirect('Dashboard','refresh');
+				redirect('Dashboard_admin','refresh');
 			}else{
 				$this->session->set_flashdata('pesan_gagal',"Gagal Login");
-				redirect('Auth','refresh');
+				redirect('Auth_admin','refresh');
 			}
 
 		}
 
-		$this->load->view('auth_view');
+		$this->load->view('admin/auth_view');
 	}
 }

@@ -9,6 +9,7 @@ class User_admin extends CI_Controller {
         $this->load->model('M_admin'); 
         $data['admin'] = $this->M_admin->get_all_admin(); // Mengambil semua data konten
         $this->load->view('template/header'); // Header template
+        $this->load->view('template/sidebar'); // Sidebar template
         $this->load->view('admin/user_admin', $data); // Menampilkan data dalam view admin/index
         $this->load->view('template/footer'); // Footer template
     }

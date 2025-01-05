@@ -1,7 +1,9 @@
-
+</div>
+</div>
+</div>
 <!-- footer content -->
 <footer>
-  <div class="pull-right">
+  <div class="">
     
 	Copyright &copy; 2024. Amikom
   </div>
@@ -60,5 +62,7 @@
     <?php endif ?>
     <?php if($this->session->flashdata('pesan_gagal')): ?>
     <script>swal("Gagal", "<?php echo $this->session->flashdata('pesan_gagal');?>", "error");</script>
-    <?php endif ?>  
+    <?php endif ?>
+</body>
+</html>
 

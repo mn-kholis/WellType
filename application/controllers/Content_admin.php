@@ -9,6 +9,7 @@ class Content_admin extends CI_Controller {
         $this->load->model('Mcontent');
         $data['konten'] = $this->Mcontent->get_all_content(); // Mengambil semua data konten
         $this->load->view('template/header'); // Header template
+        $this->load->view('template/sidebar'); // Sidebar template
         $this->load->view('admin/content', $data); // Menampilkan data dalam view content/index
         $this->load->view('template/footer'); // Footer template
     }
