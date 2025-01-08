@@ -8,23 +8,23 @@
   </head>
   <body>
 <div class="container mt-5">
-	<h5 class="mt-5">Tambah artikel</h5>
+	<h5 class="mt-5">Tambah Content</h5>
 
 	<form method="post" enctype="multipart/form-data">
 		<div class="mb-3">
-			<label>Judul Artikel</label>
+			<label>Judul Content</label>
 			<input type="text" name="judul_konten" class="form-control" value="<?php echo set_value("judul_artikel") ?>">
 				<?php echo form_error("judul_konten") ?>
 			</span>
 		</div>
 		<div class="mb-3">
-			<label>Isi artikel</label>
+			<label>Isi Content</label>
 			<textarea class="form-control" id="editorku" name="konten"><?php echo set_value("isi_artikel") ?></textarea>
 				<?php echo form_error("konten") ?>
 			</span>
 		</div>
 		<div class="mb-3">
-			<label>Foto artikel</label>
+			<label>Foto Content</label>
 			<input type="file" name="gambar" class="form-control">
 		</div>
 		<button class="btn btn-primary">Simpan</button>

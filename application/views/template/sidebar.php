@@ -34,7 +34,7 @@
               </li>
               <li><a href="<?php echo base_url('content_admin'); ?>"><i class="fa fa-table"></i> Content</a></li>
               </li>
-              <li><a><i class="fa fa-laptop"></i> Game</a>
+              <li><a  href="<?php echo base_url('game_admin'); ?>"><i class="fa fa-laptop"></i> Game</a>
               </li>
               <li><a><i class="fa fa-clone"></i> Notifikasi</a>
               </li>
