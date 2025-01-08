@@ -33,13 +33,13 @@
             <div class="clearfix"></div>
         </div>
 
-        <div class="x_content">
+        <div class="x_Game">
             <div class="table-responsive">
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Judul Game</th>
+                            <th>Judul game</th>
                             <th>Deskripsi</th>
                             <th>Aksi</th>
                         </tr>
@@ -49,11 +49,11 @@
                             <tr>
                                 <th scope="row"><?php echo $row->id_game; ?></th>
                                 <td><?php echo $row->judul_game; ?></td>
-                                <td><?php echo substr($row->game, 0, 100) . '...'; ?></td>
+                                <td><?php echo $row->deskripsi_game; ?></td>
                                 <td class="text-center">
                                     <a href="<?php echo base_url('Game_admin/edit/' . $row->id_game); ?>"
                                         class="btn btn-warning">Edit</a>
-                                    <a href="<?php echo base_url('Game_admin/delete_game/'. $row->id_game); ?>"
+                                    <a href="<?php echo base_url('Game_admin/delete_Game/'. $row->id_game); ?>"
                                         class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Delete</a>
                                 </td>
                             </tr>
@@ -62,7 +62,7 @@
                 </table>
             </div>
             <div class="text-left">
-                <a href="<?php echo base_url('Content_admin/add/'); ?>" class="btn btn-primary">Add Game</a>
+                <a href="<?php echo base_url('Game_admin/add/'); ?>" class="btn btn-primary">Add Game</a>
             </div>
         </div>
     </div>

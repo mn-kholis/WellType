@@ -14,10 +14,10 @@ class Game_admin extends CI_Controller {
     // Mengubah nama method menjadi index agar sesuai dengan routing
     public function index() {
         $this->load->model('Mgame');
-        $data['game'] = $this->Mgame->get_all_content(); // Mengambil semua data game
+        $data['game'] = $this->Mgame->get_all_game(); // Mengambil semua data game
         $this->load->view('template/header'); // Header template
         $this->load->view('template/sidebar'); // Sidebar template
-        $this->load->view('admin/content', $data); // Menampilkan data dalam view content/index
+        $this->load->view('admin/game', $data); // Menampilkan data dalam view game/index
         $this->load->view('template/footer'); // Footer template
     }
 
@@ -36,10 +36,10 @@ class Game_admin extends CI_Controller {
                 // Ambil data dari form
                 $data = [
                     'judul_game' => $this->input->post('judul_game'),
-                    'deskripsi_game' => $this->input->post('deskripsi'),
+                    'deskripsi_game' => $this->input->post('deskripsi_game'),
                 ];
 
-                if ($this->Mcontent->add_content($data)) {
+                if ($this->Mgame->add_game($data)) {
                     $this->session->set_flashdata('pesan_sukses', 'Game berhasil ditambahkan!');
                     redirect('game');
                 } else {
@@ -56,42 +56,41 @@ class Game_admin extends CI_Controller {
     // Edit game berdasarkan id
     public function edit($id_game) {
         $this->load->model('Mgame');
-        $data['game'] = $this->Mcontent->get_content_by_id($id_game); // Ambil data game berdasarkan id
+        $data['game'] = $this->Mgame->get_game_by_id($id_game); // Ambil data game berdasarkan id
 
         if ($this->input->post()) {
             // Validasi input
             $this->form_validation->set_rules('judul_game', 'Judul game', 'required');
-            $this->form_validation->set_rules('game', 'game', 'required');
+            $this->form_validation->set_rules('deskripsi_game', 'deskripsi', 'required');
 
             if ($this->form_validation->run() == FALSE) {
                 // Jika form tidak valid
-                $this->load->view('admin/editcontent', $data); // Form edit game
+                $this->load->view('admin/editgame', $data); // Form edit game
             } else {
                 // Ambil data dari form
                 $update_data = [
                     'judul_game' => $this->input->post('judul_game'),
-                    'game' => $this->input->post('game'),
-                    'gambar' => $this->input->post('gambar') // Proses upload gambar harus ditangani di sini
+                    'deskripsi_game' => $this->input->post('deskripsi_game'),
                 ];
 
-                if ($this->Mcontent->edit_content($id_game, $update_data)) {
+                if ($this->Mgame->edit_game($id_game, $update_data)) {
                     $this->session->set_flashdata('pesan_sukses', 'game berhasil diperbarui!');
-                    redirect('Content_admin');
+                    redirect('game_admin');
                 } else {
                     $this->session->set_flashdata('pesan_gagal', 'Gagal memperbarui game.');
-                    redirect('Content_admin/edit/'.$id_game);
+                    redirect('game_admin/edit/'.$id_game);
                 }
             }
         } else {
             // Jika tidak ada post
-            $this->load->view('admin/editcontent', $data); // Form edit game
+            $this->load->view('admin/editgame', $data); // Form edit game
         }
     }
-    public function delete_content($id_game) {
-        $this->load->model('Mcontent');
-        $this->Mcontent->delete_content($id_game); // Hapus game berdasarkan id
-        redirect('Content_admin'); // Redirect kembali ke halaman game
-        $this->session->set_flashdata('pesan_sukses','content telah terhapus');
-        redirect('Content_admin','refresh'); 
+    public function delete_game($id_game) {
+        $this->load->model('Mgame');
+        $this->Mgame->delete_game($id_game); // Hapus game berdasarkan id
+        redirect('game_admin'); // Redirect kembali ke halaman game
+        $this->session->set_flashdata('pesan_sukses','game telah terhapus');
+        redirect('game_admin','refresh'); 
     }
 }
