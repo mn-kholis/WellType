@@ -3,7 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_admin extends CI_Controller {
 
-
+    public function __construct() {
+        parent::__construct();
+        // Pastikan pengguna sudah login
+        if (!($this->session->userdata('username')&&$this->session->userdata('status_admin'))) {
+            $this->session->set_flashdata('signin_error', 'Anda Belum Login! Silakan Login Terlebih Dahulu.');
+            redirect('Auth_admin'); // Redirect ke halaman login jika belum login
+        }
+    }
     // Mengubah nama method menjadi index agar sesuai dengan routing
     public function index() {
         $this->load->model('M_admin'); 
