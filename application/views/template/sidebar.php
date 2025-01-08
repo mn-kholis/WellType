@@ -18,7 +18,7 @@
             <h2><?= $this->session->userdata('username');?></h2>
           </div>
         </div>
-
+        <!-- /sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
           <div class="menu_section">
           <h3><?= $this->session->userdata('status_admin');?></h3>
@@ -43,22 +43,7 @@
             </ul>
           </div>
         </div>
-        <!-- /menu footer buttons -->
-        <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
+        <!-- /sidebar menu -->
       </div>
     </div>
     <!-- top navigation -->
@@ -83,7 +68,6 @@
       </div>
     </div>
     <div class="right_col" role="main">
-
 
 
 

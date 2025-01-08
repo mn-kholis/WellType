@@ -25,13 +25,13 @@
     <link href="<?php echo base_url() ?>template/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- Custom Theme Style -->
     <link href="<?php echo base_url() ?>template/build/css/custom.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <!-- Datatables -->
     
-      <style>
-    .tile-stats .icon {
-      font-size: 50px; /* Ukuran ikon */
-      color: #5A738E; /* Warna ikon */
-      margin-top: 20px; /* Menambahkan jarak antara ikon dengan bagian atas kotak */
-      display: inline-block; /* Pastikan ikon tetap pada posisi */
-    }
-    </style>
+    <link href="<?php echo base_url() ?>template/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>template/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>template/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>template/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>template/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
   </head>
