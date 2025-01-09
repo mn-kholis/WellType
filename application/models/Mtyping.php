@@ -29,5 +29,23 @@ class Mtyping extends CI_Model {
         $query = $this->db->get();
         return $query->row()->deskripsi_game;
     }
+    public function saveGameData($data) {
+        $this->db->insert('datagame', $data);
+        return $this->db->insert_id(); // Mengembalikan ID dari data yang dimasukkan (opsional)
+    }
+    public function updateReward($id_user, $score) {
+        // Ambil total_reward sebelumnya
+        $this->db->select('total_reward');
+        $this->db->from('user');
+        $this->db->where('id_user', $id_user);
+        $currentReward = $this->db->get()->row()->total_reward;
+    
+        // Tambahkan score ke total_reward
+        $newReward = $currentReward + $score;
+    
+        // Update total_reward
+        $this->db->where('id_user', $id_user);
+        $this->db->update('user', ['total_reward' => $newReward]);
+    }
     
 }

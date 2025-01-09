@@ -83,7 +83,8 @@
             <p>your last input :</p>
             <div class="user-inputs"></div>
         </div>
-        <script src="<?= base_url('assets/js/script.js') ?>?v=<?= time(); ?>"></script>
+        <div id="gameData" data-base-url="<?= base_url(); ?>" data-game-id="<?= $target->id_game; ?>"></div>
+        <script src="<?= base_url('assets/js/script.js'); ?>?v=<?= time(); ?>"></script>
 </div>
     
 </body>
