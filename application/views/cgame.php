@@ -35,6 +35,7 @@
             <a href="<?= base_url()?>"><button id="backBtn">Back Home</button></a>
         </div>
     </main>
+    <div id="gameData" data-base-url="<?= base_url(); ?>"></div>
     <script src="<?= base_url('assets/js/wpm.js') ?>?v=<?= time(); ?>"></script>
     <script>
         let bestWpm = parseFloat(<?php echo json_encode($bestWpm); ?>) || 0;

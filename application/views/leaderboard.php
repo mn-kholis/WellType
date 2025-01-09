@@ -112,7 +112,7 @@
                         <a class="nav-link" href="<?= base_url()?>"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('userprofile')?>"><strong>Username</strong></a>
+                        <a class="nav-link" href="<?= base_url('userprofile')?>"><strong><?= $this->session->userdata('username'); ?></strong></a>
                     </li>
                 </ul>
             </div>
