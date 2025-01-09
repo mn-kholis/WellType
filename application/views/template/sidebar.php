@@ -36,7 +36,7 @@
               </li>
               <li><a  href="<?php echo base_url('game_admin'); ?>"><i class="fa fa-laptop"></i> Game</a>
               </li>
-              <li><a><i class="fa fa-clone"></i> Notifikasi</a>
+              <li><a  href="<?php echo base_url('notifikasi_admin'); ?>"><i class="fa fa-clone"></i> Notifikasi</a>
               </li>
               <li><a><i class="fa fa-bar-chart-o"></i> Analysis & Reporting</a>
               </li>

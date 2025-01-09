@@ -8,32 +8,26 @@
   </head>
   <body>
 <div class="container mt-5">
-	<h5 class="mt-5">Edit Game</h5>
+	<h5 class="mt-5">Edit Notifikasi</h5>
 
 	<form method="post" enctype="multipart/form-data">
 		<div class="mb-3">
-			<label>Judul Game</label>
-			<input type="text" name="judul_game" class="form-control" value="<?php echo set_value("judul_game", $game->judul_game) ?>">
-				<?php echo form_error("judul_game") ?>
+			<label>Jenis Notifikasi</label>
+			<input type="text" name="jenis_notifikasi" class="form-control" value="<?php echo set_value("jenis_notifikasi", $notifikasi->jenis_notifikasi) ?>">
+				<?php echo form_error("jenis_notifikasi") ?>
 			</span>
 		</div>
 		<div class="mb-3">
-			<label>Deskripsi</label>
-			<textarea class="form-control" id="editorku" name="deskripsi_game"><?php echo set_value("deskripsi_game", $game->deskripsi_game) ?></textarea>
+			<label>Notifikasi</label>
+			<textarea class="form-control" id="editorku" name="isi_notifikasi"><?php echo set_value("isi_notifikasi", $notifikasi->isi_notifikasi) ?></textarea>
 			<span class="small text-danger">
-				<?php echo form_error("isi_game") ?>
+				<?php echo form_error("isi_notifikasi") ?>
 			</span>
 		</div>
 		<div class="mb-3">
-			<label>Text Game</label>
-			<input type="text" name="text_game" class="form-control" value="<?php echo set_value("text_game", $game->text_game) ?>">
-				<?php echo form_error("text_game") ?>
-			</span>
-		</div>
-		<div class="mb-3">
-			<label>Reward</label>
-			<input type="text" name="reward" class="form-control" value="<?php echo set_value("reward", $game->reward) ?>">
-				<?php echo form_error("reward") ?>
+			<label>Frekuensi</label>
+			<input type="text" name="frekuensi" class="form-control" value="<?php echo set_value("frekuensi", $notifikasi->frekuensi) ?>">
+				<?php echo form_error("frekuensi") ?>
 			</span>
 		</div>
 		<button type="submit" class="btn btn-primary">Simpan</button>

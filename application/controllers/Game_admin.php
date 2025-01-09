@@ -23,10 +23,13 @@ class Game_admin extends CI_Controller {
 
      // Menambah game
     public function add() {
+        $this->load->model('Mgame');
         if ($this->input->post()) {
             // Validasi input
             $this->form_validation->set_rules('judul_game', 'Judul Game', 'required');
             $this->form_validation->set_rules('deskripsi_game', 'Deskripsi', 'required');
+            $this->form_validation->set_rules('text_game', 'text_game', 'required');
+            $this->form_validation->set_rules('reward', 'reward', 'required');
 
             if ($this->form_validation->run() == FALSE) {
                 // Jika form tidak valid
@@ -37,11 +40,13 @@ class Game_admin extends CI_Controller {
                 $data = [
                     'judul_game' => $this->input->post('judul_game'),
                     'deskripsi_game' => $this->input->post('deskripsi_game'),
+                    'text_game' => $this->input->post('text_game'),
+                    'reward' => $this->input->post('reward'),
                 ];
 
                 if ($this->Mgame->add_game($data)) {
                     $this->session->set_flashdata('pesan_sukses', 'Game berhasil ditambahkan!');
-                    redirect('game');
+                    redirect('Game_admin');
                 } else {
                     $this->session->set_flashdata('pesan_gagal', 'Gagal menambahkan game.');
                     redirect('game/add');
@@ -62,6 +67,8 @@ class Game_admin extends CI_Controller {
             // Validasi input
             $this->form_validation->set_rules('judul_game', 'Judul game', 'required');
             $this->form_validation->set_rules('deskripsi_game', 'deskripsi', 'required');
+            $this->form_validation->set_rules('text_game', 'text_game', 'required');
+            $this->form_validation->set_rules('reward', 'reward', 'required');
 
             if ($this->form_validation->run() == FALSE) {
                 // Jika form tidak valid
@@ -71,6 +78,8 @@ class Game_admin extends CI_Controller {
                 $update_data = [
                     'judul_game' => $this->input->post('judul_game'),
                     'deskripsi_game' => $this->input->post('deskripsi_game'),
+                    'text_game' => $this->input->post('text_game'),
+                    'reward' => $this->input->post('reward'),
                 ];
 
                 if ($this->Mgame->edit_game($id_game, $update_data)) {

@@ -3,21 +3,21 @@
   <div class="row">
       <div class="animated flipInY col-lg-3 col-md-4 col-sm-6">
         <div class="tile-stats">
-          <div class="icon"><i class="fa fa-user mb-5"></i></div>
+          <div class="icon"><i class="fa fa-user mb-2"></i></div>
           <div class="count">179</div>
           <h5 class="ml-3 mt-3">Premium User</h5>
         </div>
     </div>
     <div class="animated flipInY col-lg-3 col-md-4 col-sm-6">
         <div class="tile-stats">
-            <div class="icon"><i class="fa fa-user mb-5"></i></div>
+            <div class="icon"><i class="fa fa-user mb-2"></i></div>
             <div class="count">200</div>
             <h5 class="ml-3 mt-3">Free User</h5>
         </div>
     </div>
     <div class="animated flipInY col-lg-3 col-md-4 col-sm-6">
         <div class="tile-stats">
-            <div class="icon"><i class="fa fa-user mb-5"></i></div>
+            <div class="icon"><i class="fa fa-user mb-2"></i></div>
             <div class="count">400</div>
             <h5 class="ml-3 mt-3">Active User</h5>
         </div>
