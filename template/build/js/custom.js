@@ -383,7 +383,7 @@ function init_flot_chart() {
     var chart_plot_02_data = [];
 
     var chart_plot_03_data = [
-        [0, 1],
+        [0, 10],
         [1, 9],
         [2, 6],
         [3, 10],

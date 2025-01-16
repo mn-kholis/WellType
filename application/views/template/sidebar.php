@@ -27,8 +27,8 @@
               </li>
               <li><a><i class="fa fa-sitemap"></i> User <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                  <li><a href="<?php echo base_url('user_admin');?>">Admin</a></li>
-                  <li><a href="<?php echo base_url('user_admin');?>">Premium User</a></li>
+                  <li><a href="<?php echo site_url();?>User_admin">Admin</a></li>
+                  <li><a href="<?php echo site_url();?>User_admin">Premium User</a></li>
                   <li><a href="">Free User</a></li>
                 </ul>
               </li>

@@ -125,13 +125,11 @@
                 <div class="card p-3">
                     <h5>Progress Overview</h5>
                     <!-- Penjelasan singkat tentang grafik -->
-                    <p>Use this graph to monitor speed and coverage improvement over time.</p>
+                    <p>Use this chart to monitor the increase in activity over time.</p>
                     <div class="d-flex justify-content-between">
                         <div>
                             <!-- Informasi angka statistik -->
-                            <p>Accuracy: <strong>98%</strong></p>
-                            <p>Coverage: <strong>17%</strong></p>
-                            <p>Speed (WPM): <strong>20</strong></p>
+                            <p>Best Speed (WPM): <strong><?php echo $bestWpm; ?></strong></p>
                         </div>
                         <!-- Grafik progress -->
                         <div style="width: 80%;">
