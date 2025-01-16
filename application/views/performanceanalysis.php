@@ -26,10 +26,6 @@
         }
         /* Lingkaran waktu latihan */
         .circle {
-            width: 150px;
-            height: 150px;
-            border: 10px solid #2d3e50;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -72,49 +68,34 @@
             <!-- Bagian Speed -->
             <div class="col-md-4 mb-3">
                 <div class="card p-3">
-                    <h5>Speed</h5>
+                    <h5 class="text-center"><strong>Best Speed</strong></h5>
                     <!-- Kecepatan secara keseluruhan -->
-                    <div class="mb-2">Overall <span class="float-end">20 WPM</span></div>
+                    <div class="mb-2">Overall <span class="float-end"><?php echo $bestWpm; ?> WPM</span></div>
                     <div class="progress mb-2" style="height: 8px;">
-                        <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
-                    </div>
-                    <!-- Kecepatan untuk simbol -->
-                    <div class="mb-2">Symbols <span class="float-end">12 WPM</span></div>
-                    <div class="progress mb-2" style="height: 8px;">
-                        <div class="progress-bar" role="progressbar" style="width: 50%;"></div>
-                    </div>
-                    <!-- Kecepatan untuk huruf kecil -->
-                    <div>Lowercase Alphabet <span class="float-end">20 WPM</span></div>
-                    <div class="progress" style="height: 8px;">
-                        <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
+                        <div class="progress-bar" role="progressbar" style="width: <?php echo $bestWpm; ?>%;"></div>
                     </div>
                 </div>
             </div>
             <!-- Bagian Practice Time -->
             <div class="col-md-4 mb-3 text-center">
-                <div class="card p-4">
-                    <h5>Practice Time</h5>
-                    <!-- Lingkaran waktu latihan -->
-                    <div class="circle mx-auto mb-3">
-                        00:06:18
+                <div class="card p-3">
+                    <h3>Practice Time</h3>
+                    <div class="circle mb-3" id="practice-time">
+                        <?= gmdate("H:i:s", $overall_time); ?> <!-- Default to overall time -->
                     </div>
-                    <!-- Tombol navigasi waktu latihan -->
-                    <div>
-                        <button class="btn btn-outline-primary btn-sm">Today</button>
-                        <button class="btn btn-outline-primary btn-sm">This Week</button>
-                        <button class="btn btn-outline-primary btn-sm">Overall</button>
+                    <div class="buttons">
+                        <button class="filter-btn btn btn-outline-primary active" data-filter="overall">Overall</button>
+                        <button class="filter-btn btn btn-outline-primary" data-filter="today">Today</button>
+                        <button class="filter-btn btn btn-outline-primary" data-filter="this_week">This Week</button>
                     </div>
                 </div>
             </div>
             <!-- Bagian Practice Attempts -->
             <div class="col-md-4 mb-3">
-                <div class="card p-3">
-                    <h5>Practice Attempts</h5>
-                    <!-- Jumlah percobaan latihan hari ini -->
-                    <div>Today <span class="float-end">0 Attempts</span></div>
-                    <hr>
-                    <!-- Jumlah percobaan latihan minggu ini -->
-                    <div>This Week <span class="float-end">0 Attempts</span></div>
+                <div class="card p-2 ">
+                    <h5 class="text-center"><strong>Practice Attempts</strong></h5>
+                    <p>Practice Attempts Today : <span class="float-end"><?= $attempts_today ?> Attempts</span></p>
+                    <p>Practice Attempts Overall : <span class="float-end"><?= $attempts_overall ?> Attempts</span></p>
                 </div>
             </div>
         </div>
@@ -174,5 +155,21 @@
             }
         });
     </script>
+    <script>
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            // Hapus kelas "active" pada semua tombol
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active'); // Tambahkan kelas "active" pada tombol yang diklik
+
+            const filter = this.getAttribute('data-filter');
+            fetch(`<?= base_url('Performanceanalysis/filter_time') ?>/${filter}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('practice-time').textContent = data.time;
+                });
+        });
+    });
+</script>
 </body>
 </html>
