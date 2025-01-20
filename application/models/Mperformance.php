@@ -35,5 +35,14 @@ class Mperformance extends CI_Model {
         $query = $this->db->get();
         return $query->row()->attempts ?: 0; // Kembalikan 0 jika tidak ada data
     }
+    public function get_user_game_data($user_id) {
+        $this->db->select('tgl_main, COUNT(*) as game_count');
+        $this->db->from('datagame'); // Ganti dengan nama tabel Anda
+        $this->db->where('id_user', $user_id);
+        $this->db->group_by('DATE(tgl_main)');
+        $this->db->order_by('tgl_main', 'ASC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
 }

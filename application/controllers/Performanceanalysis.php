@@ -28,7 +28,7 @@ class Performanceanalysis extends CI_Controller {
         // Hitung waktu penyelesaian
         $data['practice_time_today'] = $this->Mperformance->get_practice_time($user_id, 'today');
         $data['practice_time_overall'] = $this->Mperformance->get_practice_time($user_id, 'overall');
-    
+        $data['game_data'] = $this->Mperformance->get_user_game_data($user_id); // Data permainan
         // Hitung jumlah attempts
         $data['attempts_today'] = $this->Mperformance->get_practice_attempts($user_id, 'today');
         $data['attempts_overall'] = $this->Mperformance->get_practice_attempts($user_id, 'overall');
