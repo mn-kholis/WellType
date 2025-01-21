@@ -117,12 +117,6 @@
                             <canvas id="progressChart"></canvas>
                         </div>
                     </div>
-                    <!-- Tombol navigasi grafik -->
-                    <div class="mt-3">
-                        <button class="btn btn-outline-secondary btn-sm">Daily</button>
-                        <button class="btn btn-outline-secondary btn-sm">Week</button>
-                        <button class="btn btn-outline-secondary btn-sm">Monthly</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -131,30 +125,52 @@
     <!-- Chart.js untuk membuat grafik -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // Inisialisasi data untuk grafik
         const ctx = document.getElementById('progressChart').getContext('2d');
+        
+        // Data dari PHP
+        const labels = <?= json_encode(array_column($game_data, 'tgl_main')) ?>;
+        const dataCounts = <?= json_encode(array_column($game_data, 'game_count')) ?>;
+
+        // Inisialisasi Chart.js
         const progressChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line', // Gunakan line chart
             data: {
-                labels: ['Oct'], // Label bulan
-                datasets: [
-                    {
-                        label: 'Practice Time',
-                        data: [6], // Data waktu latihan
-                        backgroundColor: '#007bff'
-                    }
-                ]
+                labels: labels, // Label tanggal
+                datasets: [{
+                    label: 'Number of Games Played',
+                    data: dataCounts, // Data jumlah permainan
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.3 // Smooth line
+                }]
             },
             options: {
                 responsive: true,
                 plugins: {
                     legend: {
-                        display: false // Sembunyikan legenda
+                        display: true
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Games Played'
+                        },
+                        beginAtZero: true
                     }
                 }
             }
         });
     </script>
+    
     <script>
     document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', function() {
