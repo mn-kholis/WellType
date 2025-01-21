@@ -66,4 +66,6 @@ class User_admin extends CI_Controller {
         $this->session->set_flashdata('pesan_sukses','admin telah terhapus');
         redirect('admin','refresh'); 
     }
+
+    
 }

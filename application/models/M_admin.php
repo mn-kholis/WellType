@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_admin extends CI_Model {
     
-    // Fungsi untuk mengambil semua data konten
+    // Fungsi untuk mengambil semua data admin
     public function get_all_admin() {
         $this->db->select('*');
         $this->db->from('admin');
