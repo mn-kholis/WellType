@@ -65,13 +65,11 @@
 <script src="<?php echo site_url() ?>template/vendors/jszip/dist/jszip.min.js"></script>
 <script src="<?php echo site_url() ?>template/vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="<?php echo site_url() ?>template/vendors/pdfmake/build/vfs_fonts.js"></script>
+<!-- jQuery custom content scroller -->
+<script src="<?php echo site_url() ?>template/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="<?php echo site_url() ?>template/build/js/custom.min.js"></script>
-
-    
-    <!-- Custom Theme Scripts -->
-    <script src="<?php echo base_url() ?>template/build/js/custom.min.js"></script>
 
     <script src=https://unpkg.com/sweetalert/dist/sweetalert.min.js></script>
     <?php if($this->session->flashdata('pesan_sukses')): ?>

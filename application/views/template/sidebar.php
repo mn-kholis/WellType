@@ -27,13 +27,13 @@
               </li>
               <li><a><i class="fa fa-sitemap"></i> User <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                <li><a href="<?php echo site_url('User_admin'); ?>">Admin</a></li>
-                <li><a href="<?php echo site_url('User_premuser'); ?>">Premium User</a></li>
-                <li><a href="<?php echo site_url('User_freeuser'); ?>">Free User</a></li>
+                  <li><a href="<?php echo site_url('User_admin'); ?>">Admin</a></li>
+                  <li><a href="<?php echo site_url('User_premuser'); ?>">Premium User</a></li>
+                  <li><a href="<?php echo site_url('User_freeuser'); ?>">Free User</a></li>
                 </ul>
               </li>
-              <li><a href="<?php echo base_url('content_admin'); ?>"><i class="fa fa-table"></i> Content</a></li>
-              </li>
+              <li><a href="<?php echo base_url('content_admin'); ?>"><i class="fa fa-table"></i> Content</a>
+              </li>              
               <li><a  href="<?php echo base_url('game_admin'); ?>"><i class="fa fa-laptop"></i> Game</a>
               </li>
               <li><a  href="<?php echo base_url('notifikasi_admin'); ?>"><i class="fa fa-clone"></i> Notifikasi</a>
