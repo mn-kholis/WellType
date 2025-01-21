@@ -174,19 +174,19 @@
                         <strong>Game</strong></a>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="cgame">Test WPM</a></li>
-                            <li><a class="dropdown-item" href="listgame">Adventure Game</a></li>
+                            <li><a class="dropdown-item" href="Cgame">Test WPM</a></li>
+                            <li><a class="dropdown-item" href="Listgame">Adventure Game</a></li>
                         </ul>
                         </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="leaderboard"><strong>Leaderboard</strong></a>
+                        <a class="nav-link" href="Leaderboard"><strong>Leaderboard</strong></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Userprofile"><strong>Profile</strong></a>
                     </li>
                     <?php if(!$this->session->userdata("username")):?>
                     <li class="nav-item">
-                    <a class="btn btn-light btn-sm fw-bold mt-2 ms-3" href="auth">Sign In</a>
+                    <a class="btn btn-light btn-sm fw-bold mt-2 ms-3" href="Auth">Sign In</a>
                     </li>
                     <?php endif ?>
                     <?php if($this->session->userdata("username")):?>

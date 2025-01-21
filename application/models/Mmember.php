@@ -49,4 +49,15 @@ class Mmember extends CI_Model {
         $this->db->where('id_user', $id_user);
         return $this->db->update('user', $data); // Memperbarui data berdasarkan id_admin
     }
+
+    //buat di dashboard admin
+    public function count_users_by_status($status) {
+        $this->db->where('status_user', $status);
+        return $this->db->count_all_results('User');
+    }
+    
+    public function count_total_users() {
+        return $this->db->count_all('User');
+    }
+    
 }

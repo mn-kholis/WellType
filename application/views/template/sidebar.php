@@ -5,13 +5,13 @@
     <div class="col-md-3 left_col">
       <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-          <a href="Dashboard_admin" class="site_title"><i class="fa fa-paw"></i> <span>WELL TYPE</span></a>
+          <a href="Dashboard_admin" class="site_title"><img src="assets/image/logo.png" alt="Logo" style="height: 50px; vertical-align: middle; margin-right: 10px;"> <span style="font-weight: bold;">WellType</span></a>
         </div>
         <div class="clearfix"></div>
         <!-- menu profile quick info -->
         <div class="profile clearfix">
           <div class="profile_pic">
-            <!-- <img src="<?php echo base_url() ?>template/production/images//img.jpg" alt="..." class="img-circle profile_img"> -->
+            <!-- <img src="<?php echo base_url() ?>asset/images/logo.png" alt="logo" class="img-circle profile_img"> -->
           </div>
           <div class="profile_info">
             <span>Welcome,</span>
@@ -27,18 +27,18 @@
               </li>
               <li><a><i class="fa fa-sitemap"></i> User <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                  <li><a href="<?php echo site_url();?>User_admin">Admin</a></li>
-                  <li><a href="<?php echo site_url();?>User_admin">Premium User</a></li>
-                  <li><a href="">Free User</a></li>
+                  <li><a href="<?php echo site_url('User_admin'); ?>">Admin</a></li>
+                  <li><a href="<?php echo site_url('User_premuser'); ?>">Premium User</a></li>
+                  <li><a href="<?php echo site_url('User_freeuser'); ?>">Free User</a></li>
                 </ul>
               </li>
-              <li><a href="<?php echo base_url('content_admin'); ?>"><i class="fa fa-table"></i> Content</a></li>
-              </li>
+              <li><a href="<?php echo base_url('content_admin'); ?>"><i class="fa fa-table"></i> Content</a>
+              </li>              
               <li><a  href="<?php echo base_url('game_admin'); ?>"><i class="fa fa-laptop"></i> Game</a>
               </li>
               <li><a  href="<?php echo base_url('notifikasi_admin'); ?>"><i class="fa fa-clone"></i> Notifikasi</a>
               </li>
-              <li><a><i class="fa fa-bar-chart-o"></i> Analysis & Reporting</a>
+              <li><a href="<?php echo base_url('analysis_admin'); ?>"><i class="fa fa-bar-chart-o"></i> Analysis & Reporting</a>
               </li>
             </ul>
           </div>
