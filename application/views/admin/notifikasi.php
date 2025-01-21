@@ -9,7 +9,8 @@
                 <div class="col-sm-12">
                     <div class="card-box table-responsive">
                         <p class="text-muted font-13 m-b-30">
-                            Responsive is an extension for DataTables that resolves that problem by optimising the table's layout for different screen sizes through the dynamic insertion and removal of columns from the table.
+                            Responsive is an extension for DataTables that resolves that problem by optimising the table's layout for 
+                            different screen sizes through the dynamic insertion and removal of columns from the table.
                         </p>
                         <div class="text-left">
                             <a href="<?php echo base_url('Notifikasi_admin/add/'); ?>" class="btn btn-primary">Add Notifikasi</a>
