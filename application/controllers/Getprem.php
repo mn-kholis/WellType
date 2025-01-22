@@ -54,7 +54,6 @@ class Getprem extends CI_Controller {
 				CURLOPT_HTTPHEADER => array(
 					"accept: application/json", "authorization: Basic U0ItTWlkLXNlcnZlci1CbFhuS0JOZnc4a2RXNmhuLTE1T0JIZFg6"),
 				));
-
 				$response = curl_exec($curl);
 				$err = curl_error($curl);
 
@@ -72,13 +71,9 @@ class Getprem extends CI_Controller {
 					}
 				}
 				}
-
-
-
 		$data["snapToken"] = $snapToken;
 		$this->load->view('getprem', $data);
 	}
-
 	public function succes(){
 		$user_id = $this->session->userdata('id_user');
 		$this->load->model('Mmember');
