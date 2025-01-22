@@ -21,7 +21,7 @@ class Userprofile extends CI_Controller {
         $data['user'] = $this->Muserprofile->get_user_profile($username);
 
         // Tampilkan halaman profil dengan data pengguna
-        $this->load->view('Userprofile', $data);
+        $this->load->view('userprofile', $data);
     }
     public function edit() {
         $id_user = $this->session->userdata('id_user');

@@ -31,13 +31,13 @@
                   <li><a href="<?php echo site_url('User_freeuser'); ?>">Free User</a></li>
                 </ul>
               </li>
-              <li><a href="<?php echo base_url('content_admin'); ?>"><i class="fa fa-table"></i> Content</a>
+              <li><a href="<?php echo base_url('Content_admin'); ?>"><i class="fa fa-table"></i> Content</a>
               </li>              
-              <li><a  href="<?php echo base_url('game_admin'); ?>"><i class="fa fa-laptop"></i> Game</a>
+              <li><a  href="<?php echo base_url('Game_admin'); ?>"><i class="fa fa-laptop"></i> Game</a>
               </li>
-              <li><a  href="<?php echo base_url('notifikasi_admin'); ?>"><i class="fa fa-clone"></i> Notifikasi</a>
+              <li><a  href="<?php echo base_url('Notifikasi_admin'); ?>"><i class="fa fa-clone"></i> Notifikasi</a>
               </li>
-              <li><a href="<?php echo base_url('analysis_admin'); ?>"><i class="fa fa-bar-chart-o"></i> Analysis & Reporting</a>
+              <li><a href="<?php echo base_url('Analysis_admin'); ?>"><i class="fa fa-bar-chart-o"></i> Analysis & Reporting</a>
               </li>
             </ul>
           </div>

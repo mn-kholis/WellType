@@ -25,7 +25,7 @@ class Dashboard_admin extends CI_Controller {
         $data['topUsers'] = $this->Mmember->getTopUsersByReward();
         $data['dates'] = $dates;
         $data['freeGames'] = $freeGames;
-    $data['premiumGames'] = $premiumGames;
+        $data['premiumGames'] = $premiumGames;
 
         $data['premium_count'] = $this->Mmember->count_users_by_status('premium');
         $data['free_count'] = $this->Mmember->count_users_by_status('free');

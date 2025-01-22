@@ -80,7 +80,7 @@ class Getprem extends CI_Controller {
 	}
 
 	public function succes(){
-		$user_id = $this->session->userdata('user_id');
+		$user_id = $this->session->userdata('id_user');
 		$this->load->model('Mmember');
 		$this->Mmember->setprem($user_id);
 
