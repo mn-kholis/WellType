@@ -28,13 +28,10 @@
     <div class="col-md-12">
       <div class="x_panel">
         <div class="x_title">
-          <h2>Graphics of games played by users</h2>
+          <h2>Graphics of user activities</h2>
           <div class="pull-right">
-            <h2>Leaderboard</h2>
             <ul class="nav navbar-right panel_toolbox">
               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-              </li>
-              <li><a class="close-link"><i class="fa fa-close"></i></a>
               </li>
             </ul>
           </div>
@@ -51,7 +48,7 @@
           <div class="col-md-3 col-sm-12 ">
             <div>
               <ul class="list-unstyled top_profiles scroll-view">
-                
+                <h2>Leaderboard</h2>
                 <?php if (!empty($topUsers)): ?>
                     <?php foreach ($topUsers as $index => $user): ?>
                     <li class="media event">
