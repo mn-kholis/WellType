@@ -14,14 +14,13 @@
             <!-- <img src="<?php echo base_url() ?>asset/images/logo.png" alt="logo" class="img-circle profile_img"> -->
           </div>
           <div class="profile_info">
-            <span>Welcome,</span>
-            <h2><?= $this->session->userdata('username');?></h2>
+            <span>Welcome,<h2><?= $this->session->userdata('username');?></h2></span>
+            <span><?= $this->session->userdata('status_admin');?></span>
           </div>
         </div>
         <!-- /sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
           <div class="menu_section">
-          <h3><?= $this->session->userdata('status_admin');?></h3>
             <ul class="nav side-menu">
               <li><a href= "<?php echo base_url('Dashboard_admin');?>"><i class="fa fa-home"></i> Dashboard</a>
               </li>
