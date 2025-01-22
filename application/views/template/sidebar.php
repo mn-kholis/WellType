@@ -5,7 +5,7 @@
     <div class="col-md-3 left_col">
       <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-          <a href="Dashboard_admin" class="site_title"><img src="assets/image/logo.png" alt="Logo" style="height: 50px; vertical-align: middle; margin-right: 10px;"> <span style="font-weight: bold;">WellType</span></a>
+          <a href="Dashboard_admin" class="site_title"><img src="<?php echo base_url() ?>/assets/image/logo.png" alt="Logo" style="height: 50px; vertical-align: middle; margin-right: 10px;"> <span style="font-weight: bold;">WellType</span></a>
         </div>
         <div class="clearfix"></div>
         <!-- menu profile quick info -->
