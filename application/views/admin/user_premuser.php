@@ -12,9 +12,6 @@
                         <p class="text-muted font-13 m-b-30">
                             Berikut adalah daftar pengguna premium. Anda dapat menambah, mengedit, atau menghapus data pengguna premium.
                         </p>
-                        <div class="text-left">
-                            <a href="<?php echo base_url('User_premuser/add/'); ?>" class="btn btn-primary">Add New</a>
-                        </div>
                         
                         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                             <thead>
@@ -51,6 +48,11 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
+                        <br>
+                        <br>
+                        <div class="text-left">
+                            <a href="<?php echo base_url('User_premuser/add/'); ?>" class="btn btn-primary">Add New</a>
+                        </div>
                     </div>
                 </div>
             </div>
