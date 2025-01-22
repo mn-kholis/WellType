@@ -11,10 +11,10 @@
             </div>
 
             <h2>Generate Report</h2>
-            <button class="btn btn-outline-secondary" onclick="window.location.href='<?= base_url('Analysis_admin/generateGameReport') ?>'">Game</button>
-            <button class="btn btn-outline-secondary" onclick="window.location.href='<?= base_url('Analysis_admin/generateUserReport') ?>'">User</button>
-            <button class="btn btn-outline-secondary" onclick="window.location.href='<?= base_url('Analysis_admin/generateContentReport') ?>'">Content</button>
-            <button class="btn btn-outline-secondary" onclick="window.location.href='<?= base_url('Analysis_admin/generateLeaderboardReport') ?>'">Leaderboard</button>
+            <button class="btn btn-outline-primary" onclick="window.location.href='<?= base_url('Analysis_admin/generateGameReport') ?>'">Game</button>
+            <button class="btn btn-outline-primary" onclick="window.location.href='<?= base_url('Analysis_admin/generateUserReport') ?>'">User</button>
+            <button class="btn btn-outline-primary" onclick="window.location.href='<?= base_url('Analysis_admin/generateContentReport') ?>'">Content</button>
+            <button class="btn btn-outline-primary" onclick="window.location.href='<?= base_url('Analysis_admin/generateLeaderboardReport') ?>'">Leaderboard</button>
             <!-- Tambahkan tombol lain untuk Content atau Leaderboard -->
         </div>
     </div>
