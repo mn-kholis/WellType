@@ -22,7 +22,7 @@
                                     <th>No</th>
                                     <th>Username</th>
                                     <th>Email</th>
-                                    <th>Password</th>
+                                    <!-- <th>Password</th> -->
                                     <th>Level</th>
                                     <th>Total Reward</th>
                                     <th>Tanggal Registrasi</th>
@@ -37,7 +37,7 @@
                                         <td><?php echo $no++; ?></td>
                                         <td><?php echo $row->username_user; ?></td>
                                         <td><?php echo $row->email_user; ?></td>
-                                        <td><?php echo $row->password_user; ?></td>
+                                        <!-- <td><?php echo $row->password_user; ?></td> -->
                                         <td><?php echo $row->level_user; ?></td>
                                         <td><?php echo $row->total_reward; ?></td>
                                         <td><?php echo date('d-m-Y', strtotime($row->tgl_reg_user)); ?></td>
