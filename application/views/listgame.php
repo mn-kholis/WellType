@@ -54,7 +54,8 @@
     <!-- Card Template -->
     <?php foreach ($homerow as $v): ?>
         <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-            <a href="<?php if ($v->id_game == 1): echo base_url('Typing/video'); else: echo base_url('Typing/game/' . $v->id_game); endif; ?>" class="text-decoration-none text-dark">
+            <a href="<?php if ($v->id_game == 1): echo base_url('Typing/video'); 
+        else: echo base_url('Typing/game/' . $v->id_game); endif; ?>" class="text-decoration-none text-dark">
                 <div class="card">
                     <h4 class="fw-bold m-3"><?= $v->id_game ?></h4>
                     <div class="text-center">
