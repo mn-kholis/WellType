@@ -34,7 +34,7 @@
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
-                <a href="<?php echo base_url('User_freemuser'); ?>" class="btn btn-secondary">Cancel</a>
+                <a href="<?php echo base_url('User_freeuser'); ?>" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>

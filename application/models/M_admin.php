@@ -19,13 +19,18 @@ class M_admin extends CI_Model {
         $query = $this->db->get();
         return $query->row(); // Mengembalikan hasil dalam bentuk objek
     }
+
+    public function add($data) {
+        return $this->db->insert('admin', $data);
+    }
+
     // Fungsi untuk mengedit data admin
-    public function edit_admin($id_admin, $data) {
+    public function edit($id_admin, $data) {
         $this->db->where('id_admin', $id_admin);
         return $this->db->update('admin', $data); // Memperbarui data berdasarkan id_admin
     }
 
-    public function delete_admin($id_admin) {
+    public function delete($id_admin) {
         echo $id_admin;
         $this->db->where('id_admin', $id_admin);
         $this->db->delete('admin');
