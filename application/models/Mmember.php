@@ -34,7 +34,7 @@ class Mmember extends CI_Model {
     }
     function setprem($user_id){
         $data = array(
-            'status_user' => 'premium' 
+            'status_user' => 'premium'
         );
 
         $this->db->where('id_user', $user_id);
