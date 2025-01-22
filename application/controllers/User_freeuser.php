@@ -33,7 +33,7 @@ class User_freeuser extends CI_Controller {
                 'level_user' => $this->input->post('level_user'),
                 'total_reward' => $this->input->post('total_reward'),
                 'tgl_reg_user' => date('Y-m-d'),
-                'status_user' => $this->input->post('free')
+                'status_user' => 'free'
             ];
 
             $insert = $this->M_freeuser->add_free_user($data);

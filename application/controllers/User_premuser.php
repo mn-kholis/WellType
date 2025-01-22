@@ -34,7 +34,7 @@ class User_premuser extends CI_Controller {
                 'level_user' => $this->input->post('level_user'),
                 'total_reward' => $this->input->post('total_reward'),
                 'tgl_reg_user' => date('Y-m-d'),
-                'status_user' => ('premium')
+                'status_user' => 'premium'
             ];
 
             $insert = $this->M_premuser->add_premium_user($data);

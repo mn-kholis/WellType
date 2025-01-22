@@ -106,6 +106,6 @@ class User_admin extends CI_Controller {
     public function delete($id_admin) {
         $this->M_admin->delete($id_admin); // Hapus admin berdasarkan id
         $this->session->set_flashdata('pesan_sukses', 'Admin telah dihapus.');
-        redirect('admin');
+        redirect('User_admin');
     }
 }
