@@ -59,5 +59,26 @@ class Mmember extends CI_Model {
     public function count_total_users() {
         return $this->db->count_all('User');
     }
+    public function getGameDataByUserType() {
+        $query = $this->db->query("
+            SELECT 
+                DATE(p.tgl_main) AS tgl_main,
+                SUM(CASE WHEN u.status_user = 'free' THEN 1 ELSE 0 END) AS free_games,
+                SUM(CASE WHEN u.status_user = 'premium' THEN 1 ELSE 0 END) AS premium_games
+            FROM datagame p
+            JOIN user u ON p.id_user = u.id_user
+            GROUP BY DATE(p.tgl_main)
+            ORDER BY tgl_main
+        ");
+        return $query->result_array();
+    }
+    public function getTopUsersByReward($limit = 5) {
+        $query = $this->db->select('id_user, username_user, email_user, total_reward')
+            ->from('user')
+            ->order_by('total_reward', 'DESC')
+            ->limit($limit)
+            ->get();
+        return $query->result_array();
+    }
     
 }

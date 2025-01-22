@@ -14,6 +14,18 @@ class Dashboard_admin extends CI_Controller {
 	public function index()
 	{
         $this->load->model('Mmember'); // Pastikan model dimuat
+    
+        // Ambil data jumlah permainan berdasarkan status user
+        $gameData = $this->Mmember->getGameDataByUserType();
+        
+        // Format data untuk Chart.js
+        $dates = array_column($gameData, 'tgl_main');
+        $freeGames = array_column($gameData, 'free_games');
+        $premiumGames = array_column($gameData, 'premium_games');
+        $data['topUsers'] = $this->Mmember->getTopUsersByReward();
+        $data['dates'] = $dates;
+        $data['freeGames'] = $freeGames;
+    $data['premiumGames'] = $premiumGames;
 
         $data['premium_count'] = $this->Mmember->count_users_by_status('premium');
         $data['free_count'] = $this->Mmember->count_users_by_status('free');
