@@ -1,19 +1,19 @@
 <div class="col-md-12 col-sm-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2>Tambah Pengguna</h2>
+            <h2>Add Free User</h2>
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
             <form id="userForm" action="<?php echo base_url('User_freeuser/add'); ?>" method="post">
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Status User</label>
                     <select id="status_user" name="status_user" class="form-control custom-select" required>
                         <option value="">Pilih Status</option>
-                        <option value="freeuser">Free User</option>
+                        <option value="free">Free User</option>
                         <option value="premium">Premium User</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" name="username_user" class="form-control" required>
@@ -40,7 +40,7 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
     // Add event listener to the status user select element
     document.getElementById('status_user').addEventListener('change', function() {
         var form = document.getElementById('userForm');
@@ -55,4 +55,4 @@
             form.action = '<?php echo base_url('User_freeuser/add'); ?>'; // Default action if no status selected
         }
     });
-</script>
+</script> -->

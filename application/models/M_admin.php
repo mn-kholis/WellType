@@ -11,17 +11,6 @@ class M_admin extends CI_Model {
         return $query->result(); // Mengembalikan hasil dalam bentuk array objek
     }
 
-    // // Fungsi untuk menambah data konten
-    // public function add_admin($data) {
-    //     return $this->db->insert('konten', $data); // Menambahkan data ke tabel "konten"
-    // }
-
-    // // Fungsi untuk mengedit data konten
-    // public function edit_admin($id_konten, $data) {
-    //     $this->db->where('id_konten', $id_konten);
-    //     return $this->db->update('konten', $data); // Memperbarui data berdasarkan id_konten
-    // }
-
     // Fungsi untuk mengambil konten berdasarkan id
     public function get_admin_by_id($id_admin) {
         $this->db->select('*');

@@ -76,6 +76,5 @@ class Userprofile extends CI_Controller {
         }
         $this->load->view('edituserprofile', $data);
     }
-    
 }
 ?>
