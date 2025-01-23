@@ -38,9 +38,9 @@ class User_freeuser extends CI_Controller {
 
             $insert = $this->M_freeuser->add_free_user($data);
             if ($insert) {
-                $this->session->set_flashdata('success', 'Data berhasil ditambahkan!');
+                $this->session->set_flashdata('pesan_sukses', 'Data berhasil ditambahkan!');
             } else {
-                $this->session->set_flashdata('error', 'Gagal menambahkan data!');
+                $this->session->set_flashdata('pesan_gagal', 'Gagal menambahkan data!');
             }
             redirect('User_freeuser');
         } else {
@@ -79,9 +79,9 @@ class User_freeuser extends CI_Controller {
             $update = $this->M_freeuser->update_user($id, $update_data);
     
             if ($update) {
-                $this->session->set_flashdata('success', 'Data berhasil diperbarui!');
+                $this->session->set_flashdata('pesan_sukses', 'Data berhasil diperbarui!');
             } else {
-                $this->session->set_flashdata('error', 'Gagal memperbarui data!');
+                $this->session->set_flashdata('pesan_gagal', 'Gagal memperbarui data!');
             }
             redirect('User_freeuser');
         } else {
@@ -95,9 +95,9 @@ class User_freeuser extends CI_Controller {
 
     public function delete($id) {
         if ($this->M_freeuser->delete_free_user($id)) {
-            $this->session->set_flashdata('success', 'Data berhasil dihapus!');
+            $this->session->set_flashdata('pesan_sukses', 'Data berhasil dihapus!');
         } else {
-            $this->session->set_flashdata('error', 'Data gagal dihapus!');
+            $this->session->set_flashdata('pesan_gagal', 'Data gagal dihapus!');
         }
         redirect('User_freeuser');
     }

@@ -98,7 +98,6 @@ class Game_admin extends CI_Controller {
     public function delete_game($id_game) {
         $this->load->model('Mgame');
         $this->Mgame->delete_game($id_game); // Hapus game berdasarkan id
-        redirect('game_admin'); // Redirect kembali ke halaman game
         $this->session->set_flashdata('pesan_sukses','game telah terhapus');
         redirect('game_admin','refresh'); 
     }

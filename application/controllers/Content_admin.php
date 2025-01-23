@@ -23,6 +23,7 @@ class Content_admin extends CI_Controller {
 
      // Menambah konten
     public function add() {
+        $this->load->model('Mcontent');
         if ($this->input->post()) {
             // Validasi input
             $this->form_validation->set_rules('judul_konten', 'Judul Konten', 'required');
@@ -36,16 +37,37 @@ class Content_admin extends CI_Controller {
                 // Ambil data dari form
                 $data = [
                     'judul_konten' => $this->input->post('judul_konten'),
-                    'konten' => $this->input->post('konten'),
-                    'gambar' => $this->input->post('gambar') // Pastikan ada proses upload untuk gambar
+                    'konten' => $this->input->post('konten') // Pastikan ada proses upload untuk gambar
                 ];
 
-                if ($this->Mcontent->add_content($data)) {
-                    $this->session->set_flashdata('pesan_sukses', 'Konten berhasil ditambahkan!');
-                    redirect('content');
-                } else {
-                    $this->session->set_flashdata('pesan_gagal', 'Gagal menambahkan konten.');
-                    redirect('content/add');
+                if (!empty($_FILES['gambar']['name'])) {
+                    // Konfigurasi upload file
+                    $config['upload_path']   = './assets/image/'; // Path penyimpanan
+                    $config['allowed_types'] = 'jpg|jpeg|png|gif'; // Jenis file
+                    $config['max_size']      = 2048; // Maksimal 2MB
+                    $config['file_name']     = time() . '_' . $_FILES['gambar']['name']; // Nama file unik
+                    
+                    $this->load->library('upload', $config);
+    
+                    if ($this->upload->do_upload('gambar')) {
+                        // Jika upload berhasil
+                        $upload_data = $this->upload->data();
+                        $data['gambar'] = $upload_data['file_name']; // Simpan nama file ke database
+
+                        if ($this->Mcontent->add_content($data)) {
+                            $this->session->set_flashdata('pesan_sukses', 'Konten berhasil ditambahkan!');
+                            redirect('content');
+                        } else {
+                            $this->session->set_flashdata('pesan_gagal', 'Gagal menambahkan konten.');
+                            redirect('content/add');
+                        }
+                    } else {
+                        $this->session->set_flashdata('pesan_gagal', 'Gagal menambahkan konten.');
+                        redirect('content/add');
+                    }
+                }else {
+                    $this->session->set_flashdata('pesan_gagal', 'Gambar tidak boleh kosong.');
+                        redirect('content/add');
                 }
             }
         } else {
@@ -71,10 +93,27 @@ class Content_admin extends CI_Controller {
                 // Ambil data dari form
                 $update_data = [
                     'judul_konten' => $this->input->post('judul_konten'),
-                    'konten' => $this->input->post('konten'),
-                    'gambar' => $this->input->post('gambar') // Proses upload gambar harus ditangani di sini
+                    'konten' => $this->input->post('konten')
                 ];
 
+                if (!empty($_FILES['gambar']['name'])) {
+                    // Konfigurasi upload file
+                    $config['upload_path']   = './assets/image/'; // Path penyimpanan
+                    $config['allowed_types'] = 'jpg|jpeg|png|gif'; // Jenis file
+                    $config['max_size']      = 2048; // Maksimal 2MB
+                    $config['file_name']     = time() . '_' . $_FILES['gambar']['name']; // Nama file unik
+                    
+                    $this->load->library('upload', $config);
+    
+                    if ($this->upload->do_upload('gambar')) {
+                        // Jika upload berhasil
+                        $upload_data = $this->upload->data();
+                        $update_data['gambar'] = $upload_data['file_name']; // Simpan nama file ke database
+                    } else {
+                        $this->session->set_flashdata('pesan_gagal', 'Gagal menambahkan konten.');
+                        redirect('Content_admin/add');
+                    }
+                }
                 if ($this->Mcontent->edit_content($id_konten, $update_data)) {
                     $this->session->set_flashdata('pesan_sukses', 'Konten berhasil diperbarui!');
                     redirect('Content_admin');
@@ -91,7 +130,6 @@ class Content_admin extends CI_Controller {
     public function delete_content($id_konten) {
         $this->load->model('Mcontent');
         $this->Mcontent->delete_content($id_konten); // Hapus konten berdasarkan id
-        redirect('Content_admin'); // Redirect kembali ke halaman konten
         $this->session->set_flashdata('pesan_sukses','content telah terhapus');
         redirect('Content_admin','refresh'); 
     }

@@ -95,7 +95,6 @@ class Notifikasi_admin extends CI_Controller {
     public function delete_notifikasi($id_notifikasi) {
         $this->load->model('Mnotifikasi');
         $this->Mnotifikasi->delete_notifikasi($id_notifikasi); // Hapus notifikasi berdasarkan id
-        redirect('notifikasi_admin'); // Redirect kembali ke halaman notifikasi
         $this->session->set_flashdata('pesan_sukses','notifikasi telah terhapus');
         redirect('notifikasi_admin','refresh'); 
     }

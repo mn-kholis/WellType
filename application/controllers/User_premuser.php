@@ -39,9 +39,9 @@ class User_premuser extends CI_Controller {
 
             $insert = $this->M_premuser->add_premium_user($data);
             if ($insert) {
-                $this->session->set_flashdata('success', 'Data berhasil ditambahkan!');
+                $this->session->set_flashdata('pesan_sukses', 'Data berhasil ditambahkan!');
             } else {
-                $this->session->set_flashdata('error', 'Gagal menambahkan data!');
+                $this->session->set_flashdata('pesan_gagal', 'Gagal menambahkan data!');
             }
             redirect('User_premuser');
         } else {
@@ -58,7 +58,7 @@ class User_premuser extends CI_Controller {
         
         if (!$data['user']) {
             // Jika data tidak ditemukan
-            $this->session->set_flashdata('error', 'Data pengguna tidak ditemukan!');
+            $this->session->set_flashdata('pesan_gagal', 'Data pengguna tidak ditemukan!');
             redirect('User_premuser');
         }
     
@@ -80,9 +80,9 @@ class User_premuser extends CI_Controller {
             $update = $this->M_premuser->update_user($id, $update_data);
     
             if ($update) {
-                $this->session->set_flashdata('success', 'Data berhasil diperbarui!');
+                $this->session->set_flashdata('pesan_sukses', 'Data berhasil diperbarui!');
             } else {
-                $this->session->set_flashdata('error', 'Gagal memperbarui data!');
+                $this->session->set_flashdata('pesan_gagal', 'Gagal memperbarui data!');
             }
             redirect('User_premuser');
         } else {
@@ -99,9 +99,9 @@ class User_premuser extends CI_Controller {
         // Tambahkan logika untuk menghapus data pengguna premium berdasarkan ID
         $delete = $this->M_premuser->delete_premium_user($id);
         if ($delete) {
-            $this->session->set_flashdata('success', 'Data berhasil dihapus!');
+            $this->session->set_flashdata('pesan_sukses', 'Data berhasil dihapus!');
         } else {
-            $this->session->set_flashdata('error', 'Data gagal dihapus!');
+            $this->session->set_flashdata('pesan_gagal', 'Data gagal dihapus!');
         }
         redirect('User_premuser');
     }
