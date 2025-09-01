@@ -10,17 +10,8 @@ Release Information
 
 This repo contains in-development code for future releases. 
 
-*******
-CopyRIght
-*******
-
-Please see the copyright.
-
-Copyright © 2024. WellType
-
 *******************
 Group Member
-*******************
 
 1. Muhammad Nurkholis 22.12.2541  
 2. Tia Puspita Sari 22.12.2481  
