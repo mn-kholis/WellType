@@ -18,3 +18,16 @@ Please see the copyright.
 
 Copyright © 2024. WellType
 
+*******************
+Group Member
+*******************
+
+1. Muhammad Nurkholis 22.12.2541  
+2. Tia Puspita Sari 22.12.2481  
+3. Ervin Reka Abadi 22.12.2526   
+
+**************************
+Prototype UI/UX
+**************************
+
+https://www.figma.com/proto/IIuVvbJsJmpXGX3TOH14bx/WELL-TYPE?node-id=74-279&starting-point-node-id=16%3A241&t=kwSql7quiJC2FKjF-1
